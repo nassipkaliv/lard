@@ -115,6 +115,7 @@ section {
 
 .info {
   position: relative;
+  padding-bottom: 100px;
 }
 
 .info-right-bg {
@@ -352,4 +353,94 @@ section {
 
 .lard-swiper {
   margin-top: 70px;
+  margin-right: -40px;
+}
+
+.lard-services {
+  margin-top: 120px;
+  position: relative;
+}
+
+.lard-swiper-card-bg {
+  position: absolute;
+  z-index: -1;
+}
+
+.lard-swiper-card {
+  border-radius: 12px;
+  padding: 24px 24px 24px 24px;
+  backdrop-filter: blur(56px);
+  background: rgba(31, 39, 67, 0.6);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 365px;
+  flex: 1;
+}
+
+.lard-swiper-card-content {
+  flex: 1;
+}
+
+.lard-swiper-card-img {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+.lard-swiper-card-subtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lard-swiper-card-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--secondary-white);
+  text-wrap: balance;
+  margin-top: 20px;
+  margin-bottom: 36px;
+  max-width: 330px;
+}
+
+.lard-swiper-card-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: var(--secondary-white);
+  opacity: 0.6;
+  max-width: 390px;
+}
+
+.lard-swiper-card-btn {
+  border: 1px solid #485173;
+  border-radius: 8px;
+  padding: 10px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(31, 39, 67, 0.1);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--secondary-white);
+  cursor: pointer;
+  width: 100%;
+  margin-top: auto;
+}
+
+.seven-img {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
 }
