@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -149,9 +150,84 @@
           </div>
         </div>
       </div>
+
+      <div class="info-title-content">
+        <div class="info-section-subtitle">
+          <span class="info-section-subtitle-text">[ 02 </span>
+          <span class="info-section-subtitle-divider"></span>
+          <span class="info-section-subtitle-text">Услуги ]</span>
+        </div>
+        <div class="info-section-title">
+          Популярные услуги
+        </div>
+        <p class="info-section-text">
+          Наш подход — стратегическое проектирование ИТ-ландшафта, который становится настоящим двигателем развития компании, а не просто набором сервисов
+        </p>
+        <button class="info-section-btn">
+          <span>Все услуги</span>
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 17.5L11 12.5L6 7.5M13 17.5L18 12.5L13 7.5" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+
+      </div>
+
+        <div class="swiper lard-swiper">
+          <div class="swiper-wrapper">
+            <!-- Слайд 1 -->
+            <div class="swiper-slide">
+              <div class="lard-swiper-card">
+                <h5 class="lard-swiper-card-subtitle">[ Аудит ИТ-инфраструктуры ]</h5>
+                <h2 class="lard-swiper-card-title">Узнайте правду о своих системах</h2>
+                <p class="lard-swiper-card-text">
+                  Проверим, что реально происходит в вашей ИТ-инфраструктуре. 
+                  <br>
+                  Найдем узкие места, которые тормозят бизнес. Покажем, где теряются деньги. Дадим план оптимизации с конкретными цифрами экономии
+                </p>
+                <button class="lard-swiper-card-btn">
+                  Подробнее
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- Слайд 2 -->
+            <div class="swiper-slide">
+              <div class="lard-info-card">
+                <h3 class="lard-info-card-title">От анализа до результата — единая методология</h3>
+                <p class="lard-info-text">Каждый проект начинаем с диагностики текущего состояния. Строим план изменений с учетом рисков. Внедряем поэтапно с контролем результата. Обучаем вашу команду и передаем знания.</p>
+              </div>
+            </div>
+            <!-- Слайд 3 -->
+            <div class="swiper-slide">
+              <div class="lard-info-card card-bg">
+                <h3 class="lard-info-card-title">Лечим причины, а не симптомы</h3>
+                <p class="lard-info-text">Если тормозит CRM, проблема может быть в базе данных. Если падает сеть, виновата может быть неправильная архитектура. Мы докапываемся до корня проблем и устраняем их навсегда.</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+
     </div>
   </section>
     
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.lard-swiper', {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 1,
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 2.6 }
+      }
+    });
+  </script>
+
     
 </body>
 </html>

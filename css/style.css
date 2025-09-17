@@ -319,3 +319,37 @@ section {
   text-align: center;
   color: var(--secondary-white);
 }
+
+.info-section-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--secondary-white);
+  opacity: 0.6;
+  max-width: 495px;
+  margin-top: 32px;
+  margin-bottom: 36px;
+}
+
+.info-section-btn {
+  border: 1px solid #485173;
+  border-radius: 8px;
+  padding: 10px 36px;
+  background: var(--primary-black);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.info-section-btn span {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--secondary-white);
+  cursor: pointer;
+}
+
+.lard-swiper {
+  margin-top: 70px;
+}
