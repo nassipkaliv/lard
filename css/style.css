@@ -17,6 +17,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -26,6 +27,7 @@ img {
 
 body {
   background: var(--primary-black);
+  overflow-x: hidden !important;
 }
 
 
@@ -353,7 +355,7 @@ section {
 
 .lard-swiper {
   margin-top: 70px;
-  margin-right: -40px;
+  /* margin-right: -120px; */
 }
 
 .lard-services {
@@ -443,4 +445,109 @@ section {
   position: absolute;
   bottom: -10%;
   left: 0;
+  z-index: -1;
+}
+
+.examples {
+  border-radius: 24px;
+  padding: 100px 40px;
+  background: var(--primary-white);
+}
+
+.color-black .info-section-subtitle-text {
+  color: var(--primary-black);
+}
+
+.color-black .info-section-subtitle-divider {
+  border: 1px solid var(--primary-black);
+}
+
+.color-black {
+  color: var(--primary-black);
+}
+
+.info-examples-btn {
+  border: 1px solid #bec1cb;
+  background: transparent;
+}
+
+.info-examples-btn span {
+  color: var(--primary-black);
+}
+
+.examples-btn-content {
+  margin-top: 36px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.examples-btn-content-text {
+  max-width: 270px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--secondary-black);
+}
+
+.case-block {
+  margin-top: 70px;
+  border: 1px solid var(--secondary-white);
+  border-radius: 16px;
+  padding: 24px 24px 24px 0px;
+  background: var(--secondary-white);
+  display: flex;
+  gap: 10px;
+}
+
+.case-left {
+  border-radius: 12px;
+  padding: 24px 48px 24px 24px;
+}
+
+.case-subtitle {
+  border: 1px solid var(--secondary-white);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: var(--primary-white);
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.case-subtitle span {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: var(--primary-black);
+  opacity: 0.5;
+}
+
+.case-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--primary-black);
+  max-width: 250px;
+  margin-bottom: 24px;
+}
+
+.case-name {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--primary-black);
+  margin-bottom: 24px;
+}
+
+.case-name a {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--blue---hover);
+  display: flex;
+  gap: 4px;
+  text-decoration: none;
 }
