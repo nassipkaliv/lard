@@ -1381,6 +1381,71 @@ section {
   padding-left: 40px;
 }
 
+.citata-row {
+  display: flex;
+  gap: 35px;
+  margin-top: 90px;
+}
+
+.citata-text {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--secondary-white);
+}
+
+.team-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-contacts {
+  padding-left: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-card-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.team-card-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--secondary-white);
+  opacity: 0.6;
+}
+
+.team-zvonok {
+  border: 1px solid #485173;
+  border-radius: 8px;
+  padding: 10px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--secondary-white);
+  background-color: transparent;
+}
+
+.partners-container {
+  border-radius: 24px;
+  background: linear-gradient(154deg, #262c44 0%, #1a2035 100%);
+}
+
 @media (max-width: 768px) {
   
   .container {
