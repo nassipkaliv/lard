@@ -189,7 +189,14 @@
 
     </div>
 
+
+
     <div class="swiper lard-swiper">
+
+        <div class="container">
+          <div class="lard-swiper-progressbar only-mob"></div>
+        </div>
+
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="lard-swiper-card">
@@ -274,12 +281,11 @@
                 </button>
               </div>
             </div>
-          </div>
-        
+          </div>        
     </div>
 
     <img src="assets/img/7.png" alt="seven" class="seven-img">
-
+    <img src="assets/img/lard-swiper-card-bg.png" alt="lard-swiper-card-bg" class="lard-swiper-card-bg-mob only-mob">
   </section>
 
   <section class="examples">
@@ -1078,12 +1084,20 @@
     const lard_swiper = new Swiper('.lard-swiper', {
       loop: true,
       spaceBetween: 10,
-      slidesPerView: 1,
+      slidesPerView: 1.2,
+      pagination: {
+        el: '.lard-swiper-progressbar',
+        type: 'progressbar',
+      },
       breakpoints: {
-        768: { slidesPerView: 2 },
+        768: { 
+          slidesPerView: 2,
+          pagination: false // скрываем прогрессбар на планшетах и выше
+        },
         1024: { slidesPerView: 2.6 }
       }
     });
+
   </script>
 
   <script>

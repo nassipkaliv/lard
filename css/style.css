@@ -1225,6 +1225,7 @@ section {
     font-size: 24px;
     max-width: 100%;
     margin-top: 20px;
+    max-width: 340px;
   }
 
   .lard-info {
@@ -1298,4 +1299,70 @@ section {
     align-items: center;
     justify-content: center;
   }
+
+  .lard-swiper {
+    margin-left: 14px;
+  }
+
+  .seven-img {
+    display: none;
+  }
+
+  .lard-swiper-card-subtitle {
+    font-size: 12px;
+  }
+
+  .lard-swiper-card-title {
+    font-size: 16px;
+    max-width: 190px;
+  }
+
+  .lard-swiper-card-btn {
+    font-size: 14px;
+  }
+
+  .lard-swiper-progressbar {
+    position: relative;
+    height: 1px !important;
+    width: 100vw;
+    background: #4d536e;;
+    margin-bottom: 24px;
+  }
+
+  .lard-swiper-progressbar .swiper-pagination-progressbar-fill {
+    background: var(--blue);
+  }
+
+  .lard-swiper-card-bg {
+    display: none;
+  }
+
+  .lard-swiper-card-bg-mob {
+    position: absolute;
+    bottom: -4%;
+    width: 100%;
+    height: 15%;
+  }
+
+  .examples {
+    padding-top: 45px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .examples-btn-content {
+    flex-direction: column-reverse;
+    gap: 36px;
+  }
+
+  .examples-btn-content .info-examples-btn {
+    width: fit-content;
+  }
+
+  .examples-btn-content-text {
+    max-width: 100%;
+
+  }
+
+
 }
