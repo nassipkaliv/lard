@@ -892,6 +892,74 @@
 
   </section>
 
+  <section class="forma">
+    <div class="container">
+      <div class="info-title-content">
+        <div class="info-section-subtitle color-black">
+          <span class="info-section-subtitle-text">[ 05 </span>
+          <span class="info-section-subtitle-divider"></span>
+          <span class="info-section-subtitle-text">Форма ]</span>
+        </div>
+        <div class="info-section-title color-black">
+          Преобразуйте ИТ из центра затрат в точку роста для вашего бизнеса
+        </div>
+        <div class="examples-btn-content">
+          <p class="examples-btn-content-text op-06">
+            Отправьте форму и получите анализ требований и предложение по решению ваших задач со стоимостью и сроками
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <input class="form-input" type="text" name="name" placeholder="Ваше имя" required>
+          </div>
+        
+          <div class="form-row">
+            <input class="form-input" type="email" name="email" placeholder="E-mail" required>
+          </div>
+        
+          <div class="form-row">
+            <input class="form-input" type="tel" name="phone" placeholder="Телефон" inputmode="tel" required>
+          </div>
+        
+          <div class="form-row form-select-wrap">
+            <select class="form-select" name="topic" required>
+              <option value="" selected disabled>Тип обращения</option>
+              <option value="audit-it">Аудит ИТ-инфраструктуры</option>
+              <option value="security">Информационная безопасность</option>
+              <option value="support">Поддержка</option>
+              <option value="integration">Системная интеграция</option>
+              <option value="other">Другое</option>
+            </select>
+            <svg class="select-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6L8 10L12 6" stroke="#787878" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        
+          <label class="form-consent">
+            <input type="checkbox" id="consent" required>
+            <span class="checkmark" aria-hidden="true"></span>
+            <span class="consent-text">
+              Даю согласие на обработку моих персональных данных ООО «Лард»
+              (ИНН 7842184337) в целях обработки заявки и телефонных звонков согласно условиям
+              <a href="https://lp.lard.team/privacy" target="_blank" rel="noopener">Политики в отношении обработки персональных данных</a>
+            </span>
+          </label>
+        
+          <button class="form-submit" type="submit" disabled>
+            Отправить
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 17.5L11 12.5L6 7.5M13 17.5L18 12.5L13 7.5" stroke="#1A2035" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        
+          <p class="form-msg" id="formMsg" role="alert" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
