@@ -646,6 +646,7 @@ section {
   top: -40%;
   left: 0;
   opacity: 0.5;
+  z-index: -1;
 }
 
 .cases {
@@ -1348,6 +1349,8 @@ section {
     padding-top: 45px;
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 0;
+    background: var(--secondary-white);
   }
 
   .examples-btn-content {
@@ -1361,8 +1364,53 @@ section {
 
   .examples-btn-content-text {
     max-width: 100%;
-
   }
 
+  .case-left {
+    background: var(--primary-white);
+  }
+
+  .case-subtitle {
+    padding: 0;
+  }
+
+  .case-subtitle span {
+    font-size: 10px;
+  }
+
+  .case-title {
+    font-size: 16px;
+  }
+
+  .clients {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 75px;
+  }
+
+  .case-swiper {
+    margin-top: 36px;
+  }
+
+  .cases-swiper-mob {
+    margin-top: 45px;
+  }
+
+  .case-card-title {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+
+  .news {
+    margin-top: 75px;
+  }
+
+  .news-arrows {
+    display: none;
+  }
+
+  .news-swiper {
+    margin-left: 14px;
+  }
 
 }
