@@ -135,7 +135,7 @@ section {
 .info-center-bg {
   position: absolute;
   right: 20%;
-  top: 35%;
+  top: 23%;
   z-index: -1;
   opacity: 1;
 }
@@ -665,7 +665,7 @@ section {
 }
 
 .cases-arrow{
-  width:28px; height:28px; border:1px solid #7A59D6; border-radius:4px;
+  width:20px; height:20px; border: 0; border-radius: 0;
   background: transparent; display:inline-flex; align-items:center; justify-content:center;
   cursor:pointer; transition:transform .2s ease, box-shadow .2s ease;
 }
@@ -1403,6 +1403,7 @@ section {
 
   .news {
     margin-top: 75px;
+    padding-bottom: 75px;
   }
 
   .news-arrows {
@@ -1411,6 +1412,74 @@ section {
 
   .news-swiper {
     margin-left: 14px;
+  }
+
+  .news-swiper-date {
+    bottom: 24px;
+    left: 8px;
+    top: auto;
+    right: auto;
+  }
+
+  .news-swiper-card-title {
+    font-size: 16px;
+    max-width: 220px;
+  }
+
+  .news-swiper-card-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .forma {
+    padding-top: 45px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 45px;
+  }
+
+  .consent-text {
+    font-size: 12px;
+  }
+
+  .form-submit {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .footer-right {
+    gap: 45px;
+    flex-direction: column;
+  }
+
+  .order-mob-3 {
+    order: 3;
+  }
+
+  .order-mob-1 {
+    order: 1;
+  }
+
+  .order-mob-2 {
+    order: 2;
+  }
+
+  .footer-email {
+    font-size: 20px;
+  }
+
+  .footer-tel {
+    font-size: 20px;
   }
 
 }
