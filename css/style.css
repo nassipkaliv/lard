@@ -723,6 +723,7 @@ section {
   font-size: 20px;
   line-height: 140%;
   color: var(--secondary-white);
+  margin-top: 12px;
 }
 
 .case-card-content {
