@@ -87,3 +87,5 @@
     cases_swiper.autoplay.start();
     setActiveIndicator(cases_swiper.realIndex % indicators.length);
   });
+
+
