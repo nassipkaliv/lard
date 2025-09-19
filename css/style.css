@@ -359,7 +359,7 @@ section {
 
 .lard-swiper {
   margin-top: 70px;
-  /* margin-right: -120px; */
+  margin-left: 40px;
 }
 
 .lard-services {
@@ -638,6 +638,14 @@ section {
 .clients {
   border-radius: 24px;
   padding: 100px 24px 0px;
+  position: relative;
+}
+
+.clients-bg {
+  position: absolute;
+  top: -40%;
+  left: 0;
+  opacity: 0.5;
 }
 
 .cases {
@@ -645,14 +653,13 @@ section {
   position: relative;
 }
 
-/* ===== PROGRESS BAR ===== */
 .cases-progress{
-  position: absolute;   /* если нужен эффект «внутри» */
-  left: 0; right: 0;    /* тянем по ширине секции */
-  top: 0px;           /* подними/опусти как нужно */
-  z-index: 5;           /* выше контента слайда */
+  position: absolute;   
+  left: 0; right: 0;    
+  top: 0px;           
+  z-index: 5;          
   display:flex; align-items:center; gap:16px;
-  pointer-events: auto; /* стрелки кликабельны */
+  pointer-events: auto; 
   max-width: 55%;
 }
 
@@ -678,7 +685,7 @@ section {
 .indicator.is-active::after{
   content:""; position:absolute; left:0; top:0; height:100%; width:0%;
   background:#79C9E0; border-radius:2px;
-  animation: fillBar 8s linear forwards;   /* 8 секунд */
+  animation: fillBar 8s linear forwards;  
 }
 
 
