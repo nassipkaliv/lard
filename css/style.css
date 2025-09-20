@@ -1347,6 +1347,7 @@ section {
   border-radius: 12px;
   padding: 4px 4px 24px;
   background: var(--secondary-white);
+  min-height: 345px;
 }
 
 .expert-block-content {
@@ -1925,5 +1926,15 @@ section {
     margin-top: 30px;
   }
 
+  .expert-swiper {
+    margin-top: 36px;
+    margin-left: 14px;
+  }
+
+  .experts {
+    padding-bottom: 45px;
+  }
   
+
+
 }
