@@ -681,7 +681,46 @@
   <section class="partners">
     <div class="container">
       <div class="partners-container">
-        
+        <div class="partners-left">
+          <h2 class="partners-title">Наши партнеры</h2>
+          <p class="partners-text">
+            Наши партнеры играют важнейшую роль в нашем бизнесе, и мы высоко ценим их вклад. У нас разнообразная сеть партнеров - от поставщиков технологий до консалтинговых компаний и системных интеграторов. Они являются неотъемлемой частью нашей компании и помогают нам предоставлять комплексные  решения нашим клиентам.
+          </p>
+        </div>
+        <div class="partners-right">
+          <div class="vpartners-panel">
+            <div class="swiper vpartners vpartners--left">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+              </div>
+            </div>
+          
+            <div class="swiper vpartners vpartners--right">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+                <div class="swiper-slide"><div class="vp-item"><img src="assets/img/vk-tech.png" alt="VK Tech"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -767,6 +806,59 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/app.js"></script>
+
+
+<script>
+  function verticalTicker(selector, {
+    slidesPerView = 3,    
+    space = 70,
+    speed = 9000,        
+    reverse = false
+  } = {}) {
+    const el = document.querySelector(selector);
+    if (!el) return null;
+
+    const count = el.querySelectorAll('.swiper-slide').length || 1;
+
+    const sw = new Swiper(selector, {
+      direction: 'vertical',
+      slidesPerView,
+      spaceBetween: space,
+
+      loop: true,
+      loopedSlides: count,
+      loopAdditionalSlides: Math.max(24, count * 3),
+
+
+      freeMode: { enabled: true, momentum: false },
+      speed,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: reverse
+      },
+
+
+      allowTouchMove: false,
+      watchSlidesProgress: true,
+      observer: true,
+      observeParents: true,
+
+      on: {
+        init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+        resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
+      }
+    });
+
+    return sw;
+  }
+
+  const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
+  const vpRight = verticalTicker('.vpartners--right', { slidesPerView: 4, space: 70, speed: 9000, reverse: true  });
+</script>
+
+
+
 
 <script>
   function makeTicker(selector, { speed = 6000, space = 16, reverse = false } = {}) {
