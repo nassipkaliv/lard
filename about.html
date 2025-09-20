@@ -132,6 +132,34 @@
           Благодарим каждого нашего клиента за вожможность применить наши компетенции
         </h2>
 
+        <button class="info-section-btn only-mob">
+          <span>Смотреть все</span>
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 17.5L11 12.5L6 7.5M13 17.5L18 12.5L13 7.5" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div class="swiper cases-swiper-mob only-mob swiper-initialized swiper-horizontal swiper-backface-hidden">
+          <div class="swiper-wrapper" id="swiper-wrapper-1012dc48f10d12af39" aria-live="polite" style="transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(0px, 0px, 0px);">
+            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 287.167px; margin-right: 12px;">
+              <img src="assets/img/case-card-img.png" alt="case-card-img">
+              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
+            </div>
+            <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 287.167px; margin-right: 12px;">
+              <img src="assets/img/case-card-img.png" alt="case-card-img">
+              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
+            </div>
+            <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 287.167px; margin-right: 12px;">
+              <img src="assets/img/case-card-img.png" alt="case-card-img">
+              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
+            </div>
+            <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 287.167px; margin-right: 12px;">
+              <img src="assets/img/case-card-img.png" alt="case-card-img">
+              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
+            </div>
+          </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
         <div class="cases cases-about only-pc">
           <div class="cases-progress">
             <button class="cases-arrow prev" aria-label="Предыдущий">
@@ -906,8 +934,14 @@
 <script>
   const expert_swiper = new Swiper('.expert-swiper', {
     spaceBetween: 10,
-    slidesPerView: 4.6
+    slidesPerView: 4.6,
+    breakpoints: {
+      576:  { slidesPerView: 1.6 },
+      768:  { slidesPerView: 1.6 },
+    },
   });
+
+
 </script>
 
 
