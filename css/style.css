@@ -1858,4 +1858,66 @@ section {
     font-size: 20px;
   }
 
+  .intro-pagination {
+    margin-top: 16px;
+  }
+
+  .about-intro-content {
+    margin-top: -60px;
+  }
+
+  .about-intro-title {
+    font-size: 30px;
+  }
+
+  .about-intro-nav {
+    display: none;
+  }
+
+  .info-row-container {
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+
+  .mission-container {
+    width: 100%;
+  }
+
+  .info-mob {
+    margin-top: 180px;
+  }
+
+  .mission-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mission-row .info-section-title {
+    margin-top: 0;
+  }
+
+  .mission-row svg {
+    height: 40px;
+    width: 40px;
+  }
+
+  .mission-container-text {
+    font-size: 12px;
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .cases-about-title {
+    margin-top: 75px;
+    font-size: 24px;
+  }
+
 }
