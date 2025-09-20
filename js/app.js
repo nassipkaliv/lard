@@ -3,7 +3,7 @@
     loop: false,
     speed: 500,
     spaceBetween: 16,
-    slidesPerView: 1.1,
+    slidesPerView: 1.2,
     breakpoints: {
       576:  { slidesPerView: 1.6 },
       768:  { slidesPerView: 2.2 },

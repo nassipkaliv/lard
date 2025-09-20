@@ -401,6 +401,7 @@ section {
 .lard-swiper-card-bg {
   position: absolute;
   z-index: -1;
+  bottom: 0%;
 }
 
 .lard-swiper-card {
@@ -1562,7 +1563,7 @@ section {
     height: 70%;
     top: 0;
     left: 0;
-    position: relative;
+    position: absolute;
     z-index: -1;
   }
 
@@ -1832,7 +1833,7 @@ section {
     padding-top: 45px;
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 45px;
+    padding-bottom: 30px;
   }
 
   .consent-text {
@@ -2067,6 +2068,28 @@ section {
     z-index: -1;
     top: 0;
     width: 150%;
+  }
+
+  .intro-vector-back {
+    height: auto;
+  }
+
+  .case-left, .case-center, .case-right {
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--primary-white);
+    height: 100%;
+    min-width: 100%;
+    margin-bottom: 44px;
+  }
+
+  .clients-bg {
+    top: -55%;
+  }
+
+  .news-swiper-card-btn span {
+    font-size: 14px;
   }
 
 }
