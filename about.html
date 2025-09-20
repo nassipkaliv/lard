@@ -43,14 +43,15 @@
   </header>
 
   <section class="intro">
+    <img src="assets/img/about-intro-bg.png" alt="Vector" class="vector-back only-pc">
+    <img src="assets/img/vector-about.png" alt="vector" class="vector-about-intro-bg only-mob">
+    <img src="assets/img/about-intro-bg2.png" alt="Illustration" class="illustration-back">
     <div class="container">
       <div class="intro-pagination">
         <a href="index.html" class="active">Главная</a>
         <span>/</span>
         <a href="about.html">О компании</a>
       </div>
-      <img src="assets/img/about-intro-bg.png" alt="Vector" class="vector-back">
-      <img src="assets/img/about-intro-bg2.png" alt="Illustration" class="illustration-back">
       <div class="about-intro-content">
         <h1 class="about-intro-title">
           Делаем передовые ИТ доступными для малого и среднего бизнеса в РФ
@@ -374,7 +375,7 @@
 
     </div>
 
-    <div class="partners">
+    <div class="partners-swipe">
       <div class="swiper partners-swiper partners-swiper--top">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><div class="partners-block"><img src="assets/img/samokat.png" alt=""></div></div>
@@ -498,13 +499,179 @@
         <div class="info-section-title">
           Команда
         </div>
-        <div class="examples-btn-content">
+
+        <p class="info-section-text only-pc">
+          Каждый специалист имеет опыт работы более 3-х лет и регулярно проходит повышение квалификации, чтобы оставаться в курсе последних событий из мира IT и digital
+        </p>
+
+        <div class="examples-btn-content only-pc">
           <button class="info-section-btn">
             <span>Смотреть все</span>
             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 17.5L11 12.5L6 7.5M13 17.5L18 12.5L13 7.5" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
+        </div>
+
+        <p class="info-section-text only-mob">
+          Каждый специалист имеет опыт работы более 3-х лет и регулярно проходит повышение квалификации, чтобы оставаться в курсе последних событий из мира IT и digital
+        </p>
+
+        <div class="swiper team-swiper only-mob">
+
+          <div class="lard-swiper-progressbar only-mob"></div>
+          
+
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="case-card">
+                  <div class="team-card-left">
+                    <div class="citata-row">
+                      <span class="citata-svg">
+                        <svg width="52" height="42" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.2" d="M0 42V31.4783C0 27.942 0.583614 24.2609 1.75084 20.4348C2.97643 16.5507 4.72727 12.8406 7.00337 9.30435C9.27946 5.71014 12.0224 2.6087 15.2323 0L24.4242 6.34783C21.7396 10.1739 19.6678 14.1159 18.2088 18.1739C16.7497 22.1739 16.0202 26.5217 16.0202 31.2174V42H0ZM27.5758 42V31.4783C27.5758 27.942 28.1594 24.2609 29.3266 20.4348C30.5522 16.5507 32.303 12.8406 34.5791 9.30435C36.8552 5.71014 39.5982 2.6087 42.8081 0L52 6.34783C49.3154 10.1739 47.2435 14.1159 45.7845 18.1739C44.3255 22.1739 43.596 26.5217 43.596 31.2174V42H27.5758Z" fill="#F9FAFB" />
+                        </svg>
+                      </span>
+                      <h3 class="citata-text">
+                        Мы создаем инфраструктуру, которая превращает разрозненные данные в структурированные инсайты и автоматизированные действия, обеспечивая нашим клиентам опережающую позицию на рынке.
+                      </h3>
+                    </div>
+                    <div class="team-contacts">
+                      <div class="team-card-name">
+                        <h2 class="team-card-title">Денис Шабалин</h2>
+                        <p class="team-card-text">Директор по маркетингу</p>
+                      </div>
+                      <div>
+                        <button class="team-zvonok">
+                          Связаться 
+                          <span>
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.38028 9.35335C9.07627 10.803 10.0251 12.1616 11.2266 13.3632C12.4282 14.5648 13.7869 15.5136 15.2365 16.2096C15.3612 16.2694 15.4235 16.2994 15.5024 16.3224C15.7828 16.4041 16.127 16.3454 16.3644 16.1754C16.4313 16.1275 16.4884 16.0704 16.6027 15.9561C16.9523 15.6064 17.1271 15.4316 17.3029 15.3174C17.9658 14.8864 18.8204 14.8864 19.4833 15.3174C19.6591 15.4316 19.8339 15.6064 20.1835 15.9561L20.3783 16.1509C20.9098 16.6824 21.1755 16.9481 21.3198 17.2335C21.6069 17.801 21.6069 18.4713 21.3198 19.0389C21.1755 19.3242 20.9098 19.59 20.3783 20.1214L20.2207 20.279C19.6911 20.8087 19.4263 21.0735 19.0662 21.2757C18.6667 21.5001 18.0462 21.6615 17.588 21.6601C17.1751 21.6589 16.8928 21.5788 16.3284 21.4186C13.295 20.5576 10.4326 18.9332 8.04466 16.5452C5.65668 14.1572 4.03221 11.2948 3.17124 8.26144C3.01103 7.69699 2.93092 7.41477 2.9297 7.00182C2.92833 6.5436 3.08969 5.92311 3.31411 5.5236C3.51636 5.16357 3.78117 4.89876 4.3108 4.36913L4.46843 4.2115C4.99987 3.68006 5.2656 3.41433 5.55098 3.26999C6.11854 2.98292 6.7888 2.98292 7.35636 3.26999C7.64174 3.41433 7.90747 3.68006 8.43891 4.2115L8.63378 4.40637C8.98338 4.75597 9.15819 4.93078 9.27247 5.10655C9.70347 5.76945 9.70347 6.62403 9.27247 7.28692C9.15819 7.46269 8.98338 7.6375 8.63378 7.9871C8.51947 8.10142 8.46231 8.15857 8.41447 8.22538C8.24446 8.46281 8.18576 8.80707 8.26748 9.08743C8.29048 9.16632 8.32041 9.22866 8.38028 9.35335Z" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-card-right">
+                    <div class="case-media">
+                      <img src="assets/img/case-card-img.png" alt="case-card-img">
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-card">
+                  <div class="team-card-left">
+                    <div class="citata-row">
+                      <span class="citata-svg">
+                        <svg width="52" height="42" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.2" d="M0 42V31.4783C0 27.942 0.583614 24.2609 1.75084 20.4348C2.97643 16.5507 4.72727 12.8406 7.00337 9.30435C9.27946 5.71014 12.0224 2.6087 15.2323 0L24.4242 6.34783C21.7396 10.1739 19.6678 14.1159 18.2088 18.1739C16.7497 22.1739 16.0202 26.5217 16.0202 31.2174V42H0ZM27.5758 42V31.4783C27.5758 27.942 28.1594 24.2609 29.3266 20.4348C30.5522 16.5507 32.303 12.8406 34.5791 9.30435C36.8552 5.71014 39.5982 2.6087 42.8081 0L52 6.34783C49.3154 10.1739 47.2435 14.1159 45.7845 18.1739C44.3255 22.1739 43.596 26.5217 43.596 31.2174V42H27.5758Z" fill="#F9FAFB" />
+                        </svg>
+                      </span>
+                      <h3 class="citata-text">
+                        Мы создаем инфраструктуру, которая превращает разрозненные данные в структурированные инсайты и автоматизированные действия, обеспечивая нашим клиентам опережающую позицию на рынке.
+                      </h3>
+                    </div>
+                    <div class="team-contacts">
+                      <div class="team-card-name">
+                        <h2 class="team-card-title">Денис Шабалин</h2>
+                        <p class="team-card-text">Директор по маркетингу</p>
+                      </div>
+                      <div>
+                        <button class="team-zvonok">
+                          Связаться 
+                          <span>
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.38028 9.35335C9.07627 10.803 10.0251 12.1616 11.2266 13.3632C12.4282 14.5648 13.7869 15.5136 15.2365 16.2096C15.3612 16.2694 15.4235 16.2994 15.5024 16.3224C15.7828 16.4041 16.127 16.3454 16.3644 16.1754C16.4313 16.1275 16.4884 16.0704 16.6027 15.9561C16.9523 15.6064 17.1271 15.4316 17.3029 15.3174C17.9658 14.8864 18.8204 14.8864 19.4833 15.3174C19.6591 15.4316 19.8339 15.6064 20.1835 15.9561L20.3783 16.1509C20.9098 16.6824 21.1755 16.9481 21.3198 17.2335C21.6069 17.801 21.6069 18.4713 21.3198 19.0389C21.1755 19.3242 20.9098 19.59 20.3783 20.1214L20.2207 20.279C19.6911 20.8087 19.4263 21.0735 19.0662 21.2757C18.6667 21.5001 18.0462 21.6615 17.588 21.6601C17.1751 21.6589 16.8928 21.5788 16.3284 21.4186C13.295 20.5576 10.4326 18.9332 8.04466 16.5452C5.65668 14.1572 4.03221 11.2948 3.17124 8.26144C3.01103 7.69699 2.93092 7.41477 2.9297 7.00182C2.92833 6.5436 3.08969 5.92311 3.31411 5.5236C3.51636 5.16357 3.78117 4.89876 4.3108 4.36913L4.46843 4.2115C4.99987 3.68006 5.2656 3.41433 5.55098 3.26999C6.11854 2.98292 6.7888 2.98292 7.35636 3.26999C7.64174 3.41433 7.90747 3.68006 8.43891 4.2115L8.63378 4.40637C8.98338 4.75597 9.15819 4.93078 9.27247 5.10655C9.70347 5.76945 9.70347 6.62403 9.27247 7.28692C9.15819 7.46269 8.98338 7.6375 8.63378 7.9871C8.51947 8.10142 8.46231 8.15857 8.41447 8.22538C8.24446 8.46281 8.18576 8.80707 8.26748 9.08743C8.29048 9.16632 8.32041 9.22866 8.38028 9.35335Z" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-card-right">
+                    <div class="case-media">
+                      <img src="assets/img/case-card-img.png" alt="case-card-img">
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-card">
+                  <div class="team-card-left">
+                    <div class="citata-row">
+                      <span class="citata-svg">
+                        <svg width="52" height="42" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.2" d="M0 42V31.4783C0 27.942 0.583614 24.2609 1.75084 20.4348C2.97643 16.5507 4.72727 12.8406 7.00337 9.30435C9.27946 5.71014 12.0224 2.6087 15.2323 0L24.4242 6.34783C21.7396 10.1739 19.6678 14.1159 18.2088 18.1739C16.7497 22.1739 16.0202 26.5217 16.0202 31.2174V42H0ZM27.5758 42V31.4783C27.5758 27.942 28.1594 24.2609 29.3266 20.4348C30.5522 16.5507 32.303 12.8406 34.5791 9.30435C36.8552 5.71014 39.5982 2.6087 42.8081 0L52 6.34783C49.3154 10.1739 47.2435 14.1159 45.7845 18.1739C44.3255 22.1739 43.596 26.5217 43.596 31.2174V42H27.5758Z" fill="#F9FAFB" />
+                        </svg>
+                      </span>
+                      <h3 class="citata-text">
+                        Мы создаем инфраструктуру, которая превращает разрозненные данные в структурированные инсайты и автоматизированные действия, обеспечивая нашим клиентам опережающую позицию на рынке.
+                      </h3>
+                    </div>
+                    <div class="team-contacts">
+                      <div class="team-card-name">
+                        <h2 class="team-card-title">Денис Шабалин</h2>
+                        <p class="team-card-text">Директор по маркетингу</p>
+                      </div>
+                      <div>
+                        <button class="team-zvonok">
+                          Связаться 
+                          <span>
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.38028 9.35335C9.07627 10.803 10.0251 12.1616 11.2266 13.3632C12.4282 14.5648 13.7869 15.5136 15.2365 16.2096C15.3612 16.2694 15.4235 16.2994 15.5024 16.3224C15.7828 16.4041 16.127 16.3454 16.3644 16.1754C16.4313 16.1275 16.4884 16.0704 16.6027 15.9561C16.9523 15.6064 17.1271 15.4316 17.3029 15.3174C17.9658 14.8864 18.8204 14.8864 19.4833 15.3174C19.6591 15.4316 19.8339 15.6064 20.1835 15.9561L20.3783 16.1509C20.9098 16.6824 21.1755 16.9481 21.3198 17.2335C21.6069 17.801 21.6069 18.4713 21.3198 19.0389C21.1755 19.3242 20.9098 19.59 20.3783 20.1214L20.2207 20.279C19.6911 20.8087 19.4263 21.0735 19.0662 21.2757C18.6667 21.5001 18.0462 21.6615 17.588 21.6601C17.1751 21.6589 16.8928 21.5788 16.3284 21.4186C13.295 20.5576 10.4326 18.9332 8.04466 16.5452C5.65668 14.1572 4.03221 11.2948 3.17124 8.26144C3.01103 7.69699 2.93092 7.41477 2.9297 7.00182C2.92833 6.5436 3.08969 5.92311 3.31411 5.5236C3.51636 5.16357 3.78117 4.89876 4.3108 4.36913L4.46843 4.2115C4.99987 3.68006 5.2656 3.41433 5.55098 3.26999C6.11854 2.98292 6.7888 2.98292 7.35636 3.26999C7.64174 3.41433 7.90747 3.68006 8.43891 4.2115L8.63378 4.40637C8.98338 4.75597 9.15819 4.93078 9.27247 5.10655C9.70347 5.76945 9.70347 6.62403 9.27247 7.28692C9.15819 7.46269 8.98338 7.6375 8.63378 7.9871C8.51947 8.10142 8.46231 8.15857 8.41447 8.22538C8.24446 8.46281 8.18576 8.80707 8.26748 9.08743C8.29048 9.16632 8.32041 9.22866 8.38028 9.35335Z" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-card-right">
+                    <div class="case-media">
+                      <img src="assets/img/case-card-img.png" alt="case-card-img">
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="case-card">
+                  <div class="team-card-left">
+                    <div class="citata-row">
+                      <span class="citata-svg">
+                        <svg width="52" height="42" viewBox="0 0 52 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.2" d="M0 42V31.4783C0 27.942 0.583614 24.2609 1.75084 20.4348C2.97643 16.5507 4.72727 12.8406 7.00337 9.30435C9.27946 5.71014 12.0224 2.6087 15.2323 0L24.4242 6.34783C21.7396 10.1739 19.6678 14.1159 18.2088 18.1739C16.7497 22.1739 16.0202 26.5217 16.0202 31.2174V42H0ZM27.5758 42V31.4783C27.5758 27.942 28.1594 24.2609 29.3266 20.4348C30.5522 16.5507 32.303 12.8406 34.5791 9.30435C36.8552 5.71014 39.5982 2.6087 42.8081 0L52 6.34783C49.3154 10.1739 47.2435 14.1159 45.7845 18.1739C44.3255 22.1739 43.596 26.5217 43.596 31.2174V42H27.5758Z" fill="#F9FAFB" />
+                        </svg>
+                      </span>
+                      <h3 class="citata-text">
+                        Мы создаем инфраструктуру, которая превращает разрозненные данные в структурированные инсайты и автоматизированные действия, обеспечивая нашим клиентам опережающую позицию на рынке.
+                      </h3>
+                    </div>
+                    <div class="team-contacts">
+                      <div class="team-card-name">
+                        <h2 class="team-card-title">Денис Шабалин</h2>
+                        <p class="team-card-text">Директор по маркетингу</p>
+                      </div>
+                      <div>
+                        <button class="team-zvonok">
+                          Связаться 
+                          <span>
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.38028 9.35335C9.07627 10.803 10.0251 12.1616 11.2266 13.3632C12.4282 14.5648 13.7869 15.5136 15.2365 16.2096C15.3612 16.2694 15.4235 16.2994 15.5024 16.3224C15.7828 16.4041 16.127 16.3454 16.3644 16.1754C16.4313 16.1275 16.4884 16.0704 16.6027 15.9561C16.9523 15.6064 17.1271 15.4316 17.3029 15.3174C17.9658 14.8864 18.8204 14.8864 19.4833 15.3174C19.6591 15.4316 19.8339 15.6064 20.1835 15.9561L20.3783 16.1509C20.9098 16.6824 21.1755 16.9481 21.3198 17.2335C21.6069 17.801 21.6069 18.4713 21.3198 19.0389C21.1755 19.3242 20.9098 19.59 20.3783 20.1214L20.2207 20.279C19.6911 20.8087 19.4263 21.0735 19.0662 21.2757C18.6667 21.5001 18.0462 21.6615 17.588 21.6601C17.1751 21.6589 16.8928 21.5788 16.3284 21.4186C13.295 20.5576 10.4326 18.9332 8.04466 16.5452C5.65668 14.1572 4.03221 11.2948 3.17124 8.26144C3.01103 7.69699 2.93092 7.41477 2.9297 7.00182C2.92833 6.5436 3.08969 5.92311 3.31411 5.5236C3.51636 5.16357 3.78117 4.89876 4.3108 4.36913L4.46843 4.2115C4.99987 3.68006 5.2656 3.41433 5.55098 3.26999C6.11854 2.98292 6.7888 2.98292 7.35636 3.26999C7.64174 3.41433 7.90747 3.68006 8.43891 4.2115L8.63378 4.40637C8.98338 4.75597 9.15819 4.93078 9.27247 5.10655C9.70347 5.76945 9.70347 6.62403 9.27247 7.28692C9.15819 7.46269 8.98338 7.6375 8.63378 7.9871C8.51947 8.10142 8.46231 8.15857 8.41447 8.22538C8.24446 8.46281 8.18576 8.80707 8.26748 9.08743C8.29048 9.16632 8.32041 9.22866 8.38028 9.35335Z" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-card-right">
+                    <div class="case-media">
+                      <img src="assets/img/case-card-img.png" alt="case-card-img">
+                    </div>
+                </div>
+                </div>
+              </div>
+          </div>
         </div>
 
         <div class="cases only-pc">
@@ -686,26 +853,7 @@
           </div>
         </div>
 
-        <div class="swiper cases-swiper-mob only-mob">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="assets/img/case-card-img.png" alt="case-card-img">
-              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/img/case-card-img.png" alt="case-card-img">
-              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/img/case-card-img.png" alt="case-card-img">
-              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/img/case-card-img.png" alt="case-card-img">
-              <h3 class="case-card-title">Инфраструктура под ключ <br> для бизнес-центра</h3>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -842,9 +990,9 @@
 
 <script>
   function verticalTicker(selector, {
-    slidesPerView = 3,    
+    slidesPerView = 3,
     space = 70,
-    speed = 9000,        
+    speed = 9000,
     reverse = false
   } = {}) {
     const el = document.querySelector(selector);
@@ -852,37 +1000,29 @@
 
     const count = el.querySelectorAll('.swiper-slide').length || 1;
 
-    const sw = new Swiper(selector, {
+    return new Swiper(selector, {
       direction: 'vertical',
       slidesPerView,
       spaceBetween: space,
-
       loop: true,
       loopedSlides: count,
       loopAdditionalSlides: Math.max(24, count * 3),
-
-
       freeMode: { enabled: true, momentum: false },
       speed,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-        reverseDirection: reverse
-      },
-
-
+      autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
       allowTouchMove: false,
       watchSlidesProgress: true,
       observer: true,
       observeParents: true,
-
+      breakpoints: {
+        0:   { spaceBetween: 16 },   
+        769: { spaceBetween: space }
+      },
       on: {
         init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
         resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
       }
     });
-
-    return sw;
   }
 
   const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
@@ -892,43 +1032,39 @@
 
 
 
+
 <script>
-  function makeTicker(selector, { speed = 6000, space = 16, reverse = false } = {}) {
-    const root = document.querySelector(selector);
-    if (!root) return null;
+function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
+  const el = document.querySelector(selector);
+  if (!el) return null;
 
-    const slidesCount = root.querySelectorAll('.swiper-slide').length || 1;
+  const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
 
-    const swiper = new Swiper(selector, {
-      slidesPerView: 'auto',
-      spaceBetween: space,
-      loop: true,
-      loopedSlides: slidesCount,
-      loopAdditionalSlides: Math.min(20, slidesCount * 2),
-      speed,
-      allowTouchMove: true,
-      freeMode: { enabled: true, momentum: false },
-      watchSlidesProgress: true,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-        reverseDirection: reverse,
-      },
-      on: {
-        init(s) {
-          s.wrapperEl.style.transitionTimingFunction = 'linear';
-        },
-        resize(s) {
-          s.wrapperEl.style.transitionTimingFunction = 'linear';
-        }
-      }
-    });
+  return new Swiper(selector, {
+    slidesPerView: 'auto',
+    spaceBetween: space,
+    loop: true,
+    loopedSlides: slidesCount,
+    loopAdditionalSlides: Math.min(20, slidesCount * 2),
+    speed,
+    freeMode: { enabled: true, momentum: false },
+    watchSlidesProgress: true,
+    allowTouchMove: true,
+    autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+    breakpoints: {
+      0:   { spaceBetween: 14 },  // мобильный вид
+      768: { spaceBetween: space }
+    },
+    on: {
+      init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+      resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
+    }
+  });
+}
 
-    return swiper;
-  }
+const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
+const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
 
-  const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
-  const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
 </script>
 
 <script>
@@ -941,6 +1077,25 @@
       1024: { slidesPerView: 4.6 },
       1280: { slidesPerView: 4.6 },
     },
+  });
+</script>
+
+<script>
+    const team_swiper = new Swiper('.team-swiper', {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    pagination: {
+      el: '.lard-swiper-progressbar',
+      type: 'progressbar',
+    },
+    breakpoints: {
+      768: { 
+        slidesPerView: 2,
+        pagination: false 
+      },
+      1024: { slidesPerView: 2.6 }
+    }
   });
 </script>
 

@@ -1462,6 +1462,10 @@ section {
   max-width: 410px;
 }
 
+.partners-right {
+  padding-right: 80px;
+}
+
 .partners-title {
   font-family: var(--second-family);
   font-weight: 700;
@@ -1481,11 +1485,21 @@ section {
 }
 
 .vpartners-panel{
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 90px;
-  overflow: hidden;
+  gap: 70px;                 /* как просили */
+  overflow: hidden;          /* чтобы работала маска/скругление */
+  border-radius: 0 0 22px 22px;          /* скруглённый низ */
+  -webkit-mask-image: linear-gradient(to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,1) 12%,
+      rgba(0,0,0,1) 88%,
+      rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,1) 12%,
+      rgba(0,0,0,1) 88%,
+      rgba(0,0,0,0) 100%);
 }
 
 
@@ -1498,7 +1512,13 @@ section {
   height: 80px; 
 }
 
-
+.vp-item::after{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,0));
+  opacity:.08; pointer-events:none;
+}
 
 
 @media (max-width: 768px) {
@@ -1864,7 +1884,7 @@ section {
   }
 
   .about-intro-content {
-    margin-top: -60px;
+    margin-top: 200px;
   }
 
   .about-intro-title {
@@ -1905,6 +1925,23 @@ section {
 
   .mission-container-text {
     font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .mission-block-text {
+    font-size: 12px;
+  }
+
+  .mission-block-title {
+    font-size: 14px;
+  }
+
+  .info-section-btn span {
+    font-size: 14px;
+  }
+
+  .examples {
+    border-radius: 12px;
   }
 
   .mission-grid {
@@ -1935,6 +1972,101 @@ section {
     padding-bottom: 45px;
   }
   
+  .partners-container {
+    flex-direction: column;
 
+  }
+
+  .partners-left {
+    padding: 44px 14px;
+  }
+
+  .partners-right {
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 20px;
+  }
+  
+  .vpartners-panel {
+    gap: 80px;
+  }
+
+  .vpartners {
+    height: 250px;
+  }
+
+  .partners-title {
+    font-size: 24px;
+  }
+
+  .partners-swiper {
+    margin-top: 0;
+  }
+
+  .partners-swipe {
+    margin-top: 30px;
+  }
+
+  .case-card {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 30px;
+    gap: 36px;
+  }
+
+  .citata-row {
+    margin-top: 0;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .case-media img {
+    width: 158px;
+    height: 178px;
+    border-radius: 12px;
+  }
+
+  .citata-text {
+    font-size: 16px;
+  }
+
+  .team-contacts {
+    padding-left: 0;
+    margin-top: 36px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .team-card-title {
+    font-size: 20px;
+  }
+
+  .team-card-text {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .team-contacts > div {
+    width: 100%;
+  }
+
+  .team-zvonok {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 45px;
+  }
+
+  .partners .container {
+    padding: 0;
+  }
+
+  .vector-about-intro-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 150%;
+  }
 
 }

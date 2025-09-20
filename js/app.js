@@ -43,49 +43,55 @@
     slidesPerView: 1.2
   });
 
-  const CASE_DELAY = 8000;
+const CASE_DELAY = 8000;
 
-  const cases_swiper = new Swiper('.cases-swiper', {
+document.querySelectorAll('.cases').forEach(section => {
+  const swiperEl   = section.querySelector('.cases-swiper');
+  const prevBtn    = section.querySelector('.cases-arrow.prev');
+  const nextBtn    = section.querySelector('.cases-arrow.next');
+  const indicators = Array.from(section.querySelectorAll('.cases-track .indicator'));
+
+  if (!swiperEl) return;
+
+  const swiper = new Swiper(swiperEl, {
     loop: true,
     autoplay: { delay: CASE_DELAY, disableOnInteraction: false },
     speed: 500,
     allowTouchMove: true,
   });
 
-  const indicators = Array.from(document.querySelectorAll('#casesTrack .indicator'));
-  const prevBtn = document.querySelector('.cases-arrow.prev');
-  const nextBtn = document.querySelector('.cases-arrow.next');
-
-  function setActiveIndicator(i){
+  const setActive = (i) => {
     indicators.forEach((el, idx) => {
-      el.classList.toggle('is-active', idx === i);
       if (idx === i) {
-        el.classList.remove('is-active'); 
-        void el.offsetWidth;
+        el.classList.remove('is-active');
+        void el.offsetWidth; // перезапуск анимации
         el.classList.add('is-active');
+      } else {
+        el.classList.remove('is-active');
       }
     });
-  }
+  };
 
-  setActiveIndicator(cases_swiper.realIndex % indicators.length);
+  setActive(swiper.realIndex % indicators.length);
 
-  cases_swiper.on('slideChange', () => {
-    setActiveIndicator(cases_swiper.realIndex % indicators.length);
+  swiper.on('slideChange', () => {
+    setActive(swiper.realIndex % indicators.length);
   });
 
-  prevBtn.addEventListener('click', () => {
-    cases_swiper.slidePrev();
-    cases_swiper.autoplay.start();
+  prevBtn?.addEventListener('click', () => {
+    swiper.slidePrev();
+    swiper.autoplay.start();
   });
 
-  nextBtn.addEventListener('click', () => {
-    cases_swiper.slideNext();
-    cases_swiper.autoplay.start();
+  nextBtn?.addEventListener('click', () => {
+    swiper.slideNext();
+    swiper.autoplay.start();
   });
 
-  cases_swiper.on('touchEnd', () => {
-    cases_swiper.autoplay.start();
-    setActiveIndicator(cases_swiper.realIndex % indicators.length);
+  swiper.on('touchEnd', () => {
+    swiper.autoplay.start();
+    setActive(swiper.realIndex % indicators.length);
   });
+});
 
 
