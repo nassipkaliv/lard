@@ -56,31 +56,20 @@
         <h1 class="about-intro-title">
           Делаем передовые ИТ доступными для малого и среднего бизнеса в РФ
         </h1>
-        <div class="about-intro-nav">
-          <a href="#" class="about-nav-link active">
-            Миссия
-          </a>
-          <a href="#" class="about-nav-link">
-            Отзывы
-          </a>
-          <a href="#" class="about-nav-link">
-            Клиенты
-          </a>
-          <a href="#" class="about-nav-link">
-            Экспертиза
-          </a>
-          <a href="#" class="about-nav-link">
-            Команда
-          </a>
-          <a href="#" class="about-nav-link">
-            Партнеры
-          </a>
+        <div class="about-intro-nav" id="aboutNav">
+          <a href="#mission" class="about-nav-link active">Миссия</a>
+          <a href="#reviews" class="about-nav-link">Отзывы</a>
+          <a href="#clients" class="about-nav-link">Клиенты</a>
+          <a href="#expertise" class="about-nav-link">Экспертиза</a>
+          <a href="#team" class="about-nav-link">Команда</a>
+          <a href="#partners" class="about-nav-link">Партнеры</a>
         </div>
+
       </div>
     </div>
   </section>
     
-  <section class="info info-mob">
+  <section class="info info-mob" id="mission">
     <img src="assets/img/news-bg.png" alt="news-bg" class="info-bg">
     <div class="container">
       <div class="info-title-content">
@@ -129,7 +118,7 @@
           </div>
         </div>
 
-        <h2 class="cases-about-title">
+        <h2 class="cases-about-title" id="reviews">
           Благодарим каждого нашего клиента за вожможность применить наши компетенции
         </h2>
 
@@ -364,7 +353,7 @@
           </div>
         </div>
 
-        <section class="our-clients">
+        <section class="our-clients" id="clients">
           <h2 class="info-section-title">
             Среди наших клиентов
           </h2>
@@ -375,7 +364,7 @@
 
     </div>
 
-    <div class="partners-swipe">
+    <div class="partners-swipe" >
       <div class="swiper partners-swiper partners-swiper--top">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><div class="partners-block"><img src="assets/img/samokat.png" alt=""></div></div>
@@ -422,7 +411,7 @@
 
   </section>
 
-  <section class="examples experts">
+  <section class="examples experts" id="expertise">
     <div class="container">
       <div class="info-title-content">
         <div class="info-section-title color-black mw-100">
@@ -509,7 +498,7 @@
       </div>
   </section>
 
-  <section class="clients">
+  <section class="clients" id="team">
     <div class="container">
       <div class="info-title-content">
         <div class="info-section-title">
@@ -874,7 +863,7 @@
     </div>
   </section>
 
-  <section class="partners">
+  <section class="partners" id="partners">
     <div class="container">
       <div class="partners-container">
         <div class="partners-left">
@@ -1002,7 +991,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/app.js"></script>
-
+  <script src="js/app2.js"></script>
 
 <script>
   function verticalTicker(selector, {
@@ -1115,7 +1104,35 @@ const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, spa
   });
 </script>
 
+<script>
+  const nav = document.getElementById('aboutNav');
+const links = Array.from(nav.querySelectorAll('.about-nav-link'));
 
+let lastClicked = nav.querySelector('.about-nav-link.active') || links[0];
+if (!lastClicked.classList.contains('active')) lastClicked.classList.add('active');
+
+// Клик: делаем пункт постоянным active
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    lastClicked?.classList.remove('active');
+    link.classList.add('active');
+    lastClicked = link;
+  });
+
+  // Ховер: временно показываем active на наведенном пункте
+  link.addEventListener('mouseenter', () => {
+    lastClicked?.classList.remove('active');
+    link.classList.add('active');
+  });
+
+  // Уход курсора: возвращаем active на последний кликнутый
+  link.addEventListener('mouseleave', () => {
+    links.forEach(l => l.classList.remove('active'));
+    lastClicked?.classList.add('active');
+  });
+});
+
+</script>
 
 
     

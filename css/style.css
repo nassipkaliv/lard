@@ -27,7 +27,9 @@
     font-display: swap;
 }
 
-
+html {
+   scroll-behavior: smooth !important;
+}
 
 :root {
 	--primary-black: #1a2035;
@@ -67,7 +69,6 @@ button {
 
 
 .container {
-  max-width: 1440px;
   width: 100%;
   padding: 0 40px;
   margin: 0 auto;
@@ -90,6 +91,12 @@ button {
   backdrop-filter: blur(14px);
   background: rgba(37, 44, 71, 0.6);
   cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.header-bar:hover {
+  border: 1px solid #4b4d57; 
+  backdrop-filter: blur(14px);
 }
 
 .header-logo {
@@ -123,6 +130,21 @@ button {
   position: absolute;
   top: -7%;
   z-index: -1;
+}
+
+.examples {
+  position: relative;
+}
+
+.examples-vector {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+
+.examples .container {
+  position: relative;
+  z-index: 1;
 }
 
 .illustration-back {
@@ -165,8 +187,8 @@ section {
 
 .info-center-bg {
   position: absolute;
-  right: 20%;
-  top: 23%;
+  right: -20%;
+  top: -45%;
   z-index: -1;
   opacity: 1;
 }
@@ -204,6 +226,11 @@ section {
   gap: 4px;
   cursor: pointer;
   border: 0;
+  transition: all ease 0.3s;
+}
+
+.intro-content-btn {
+  background: var(--blue---hover);
 }
 
 .info {
@@ -226,7 +253,7 @@ section {
   font-size: 14px;
   text-align: right;
   color: var(--primary-white);
-  opacity: 0.3;
+  opacity: 0.2;
   white-space: nowrap;
 }
 
@@ -234,7 +261,7 @@ section {
   border: 1px solid var(--primary-white);
   max-width: 100%;
   width: 100%;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .info-section-title {
@@ -348,6 +375,11 @@ section {
   justify-content: center;
   gap: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lard-info-btn:hover {
+  border: 1px solid #bec1cb;
 }
 
 .lard-info-btn span {
@@ -377,6 +409,11 @@ section {
   display: flex;
   align-items: center;
   gap: 4px;
+  transition: all ease 0.3s;
+}
+
+.info-section-btn:hover {
+  border: 1px solid #bec1cb;
 }
 
 .info-section-btn span {
@@ -475,6 +512,11 @@ section {
   cursor: pointer;
   width: 100%;
   margin-top: auto;
+  transition: all ease 0.3s;
+}
+
+.lard-swiper-card-btn:hover {
+  border: 1px solid #bec1cb;
 }
 
 .seven-img {
@@ -505,6 +547,12 @@ section {
 .info-examples-btn {
   border: 1px solid #bec1cb;
   background: transparent;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.info-examples-btn:hover {
+  border: 1px solid #6d79a0;
 }
 
 .info-examples-btn span {
@@ -538,7 +586,7 @@ section {
 .case-left {
   border-radius: 12px;
   padding: 24px 48px 24px 24px;
-  min-width: 313px;
+  min-width: 24.6%;
 }
 
 .case-subtitle {
@@ -671,14 +719,16 @@ section {
   border-radius: 24px;
   padding: 100px 24px 0px;
   position: relative;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .clients-bg {
   position: absolute;
   top: -40%;
   left: 0;
-  opacity: 0.5;
-  z-index: -1;
+  opacity: 0.35;
+  z-index: 0;
 }
 
 .cases {
@@ -784,6 +834,11 @@ section {
   margin-top: 0;
 }
 
+.case-media img {
+  border-radius: 12px;
+  width: 100%;
+}
+
 .news {
   margin-top: 120px;
   padding-bottom: 120px;
@@ -860,8 +915,13 @@ section {
   display: flex;
   align-items: center;
   gap: 4px;
+  transition: all ease 0.3s;
   margin-top: auto;
   margin-top: 70px;
+}
+
+.news-swiper-card-btn:hover {
+  border: 1px solid #bec1cb;
 }
 
 .news-swiper-card-btn span {
@@ -1342,6 +1402,7 @@ section {
 
 .expert-swiper {
   margin-top: 70px;
+  margin-left: 40px;
 }
 
 .expert-block {
@@ -1351,9 +1412,15 @@ section {
   min-height: 345px;
 }
 
+.expert-block img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .expert-block-content {
   margin-top: 32px;
   max-width: 290px;
+  padding-left: 12px;
 }
 
 .expert-block-title {
@@ -1441,6 +1508,11 @@ section {
   text-align: center;
   color: var(--secondary-white);
   background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.team-zvonok:hover {
+  border: 1px solid #bec1cb;
 }
 
 .partners {
@@ -1521,6 +1593,14 @@ section {
   opacity:.08; pointer-events:none;
 }
 
+.examples, .forma {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
 
 @media (max-width: 768px) {
   
@@ -2086,6 +2166,7 @@ section {
 
   .clients-bg {
     top: -55%;
+    opacity: 0.1;
   }
 
   .news-swiper-card-btn span {
