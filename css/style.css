@@ -92,15 +92,16 @@ button {
   background: rgba(37, 44, 71, 0.6);
   cursor: pointer;
   transition: all ease 0.3s;
+  will-change: transform, box-shadow, background;
 }
 
 .header-bar:hover {
   border: 1px solid #4b4d57; 
-  backdrop-filter: blur(14px);
 }
 
 .header-logo {
   flex: 0 0 auto;
+  cursor: pointer;
 }
 
 .header-right {
@@ -130,6 +131,7 @@ button {
   position: absolute;
   top: -7%;
   z-index: -1;
+  width: 100%;
 }
 
 .examples {
@@ -229,7 +231,7 @@ section {
   transition: all ease 0.3s;
 }
 
-.intro-content-btn {
+.intro-content-btn:hover {
   background: var(--blue---hover);
 }
 
@@ -1003,8 +1005,8 @@ section {
 .form-input::placeholder, .form-select::placeholder { color: #bcbcbc; }
 .form-input:focus,
 .form-select:focus{
-  border-color:#BFD9E6;
-  box-shadow: 0 0 0 3px rgba(121,201,224,.25);
+  border: 1px solid #d8dee1;
+  box-shadow: none;
 }
 
 .form-select-wrap{ position:relative; }

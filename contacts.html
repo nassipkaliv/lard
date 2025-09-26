@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Contacts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-logo">
+        <img src="assets/img/LOGO.png" class="header-logo-img" alt="logo">
+      </div>
+      <div class="header-bar">
+        <span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.25 6.375H15.75M2.25 11.625H15.75" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </div>
+      <div class="header-right">
+        <button class="header-btn" id="tel-btn">
+          <span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.28521 6.64001C6.80721 7.72723 7.5188 8.74621 8.41998 9.64739C9.32116 10.5486 10.3401 11.2602 11.4274 11.7822C11.5209 11.8271 11.5676 11.8495 11.6268 11.8668C11.8371 11.9281 12.0953 11.884 12.2733 11.7565C12.3234 11.7206 12.3663 11.6778 12.452 11.592C12.7143 11.3298 12.8454 11.1987 12.9772 11.113C13.4744 10.7898 14.1153 10.7898 14.6125 11.113C14.7443 11.1987 14.8754 11.3298 15.1376 11.592L15.2838 11.7382C15.6823 12.1368 15.8816 12.3361 15.9899 12.5501C16.2052 12.9758 16.2052 13.4785 15.9899 13.9041C15.8816 14.1182 15.6823 14.3175 15.2838 14.7161L15.1655 14.8343C14.7683 15.2315 14.5697 15.4301 14.2997 15.5818C14 15.7501 13.5347 15.8711 13.191 15.8701C12.8813 15.8692 12.6696 15.8091 12.2463 15.6889C9.97125 15.0432 7.82448 13.8249 6.0335 12.0339C4.24251 10.2429 3.02415 8.09612 2.37843 5.82108C2.25827 5.39774 2.19819 5.18607 2.19727 4.87636C2.19625 4.5327 2.31727 4.06733 2.48559 3.7677C2.63727 3.49768 2.83588 3.29907 3.2331 2.90185L3.35132 2.78362C3.74991 2.38504 3.9492 2.18575 4.16323 2.07749C4.5889 1.86219 5.0916 1.86219 5.51727 2.07749C5.73131 2.18575 5.9306 2.38504 6.32918 2.78362L6.47533 2.92978C6.73754 3.19198 6.86864 3.32308 6.95436 3.45492C7.2776 3.95208 7.2776 4.59302 6.95435 5.09019C6.86864 5.22202 6.73754 5.35312 6.47533 5.61533C6.3896 5.70106 6.34673 5.74393 6.31085 5.79404C6.18334 5.97211 6.13932 6.2303 6.20061 6.44057C6.21786 6.49974 6.24031 6.5465 6.28521 6.64001Z" stroke="#F9FAFB" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          + 7 (812) 343 57 69
+        </button>
+        <button class="header-btn" id="vzlom-btn">
+          <span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.75 5.62478L7.5 7.87478L10.5 9.37478L8.25 11.6248M15 8.99978C15 12.6811 10.9845 15.3586 9.52349 16.2109C9.35745 16.3078 9.27443 16.3562 9.15726 16.3814C9.06633 16.4009 8.93367 16.4009 8.84274 16.3814C8.72557 16.3562 8.64255 16.3078 8.47651 16.2109C7.01547 15.3586 3 12.6811 3 8.99978V5.41298C3 4.81335 3 4.51353 3.09807 4.25581C3.18471 4.02814 3.32549 3.82499 3.50824 3.66393C3.71512 3.48161 3.99585 3.37634 4.5573 3.16579L8.57865 1.65779C8.73457 1.59932 8.81253 1.57008 8.89274 1.55849C8.96388 1.54821 9.03612 1.54821 9.10726 1.55849C9.18747 1.57008 9.26543 1.59932 9.42135 1.65779L13.4427 3.16579C14.0042 3.37634 14.2849 3.48161 14.4918 3.66393C14.6745 3.82499 14.8153 4.02814 14.9019 4.25581C15 4.51353 15 4.81335 15 5.41298V8.99978Z" stroke="#F9FAFB" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          Вас взломали?
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <img src="assets/img/about-intro-bg.png" alt="Vector" class="vector-back only-pc">
+    <img src="assets/img/vector-about.png" alt="vector" class="vector-about-intro-bg only-mob">
+    <img src="assets/img/about-intro-bg2.png" alt="Illustration" class="illustration-back">
+    <div class="container">
+      <div class="intro-pagination">
+        <a href="index.html" class="active">Главная</a>
+        <span>/</span>
+        <a href="about.html">Контакты</a>
+      </div>
+    </div>
+  </section>
+    
+  
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img src="assets/img/LOGO.png" alt="logo">
+          <h2 class="footer-title">ИТ-аутсорсинг полного цикла</h2>
+          <div class="footer-text-content">
+            <p class="footer-text">© ООО «Лард» 2025</p>
+            <p class="footer-text">ИНН 7842184337 </p>
+            <p class="footer-text">КПП 748201001</p>
+          </div>
+          <a class="footer-policy-link" href="https://lp.lard.team/privacy">
+            Политика в отношении обработки персональных данных
+          </a>
+        </div>
+        <div class="footer-right">
+          <div class="footer-col order-mob-2">
+            <div class="footer-link-title">Услуги</div>
+            <div class="footer-links">
+              <a class="footer-link" href="#">Аудит ИТ-инфраструктуры</a>
+              <a class="footer-link" href="#">Аудит ИТ-инфраструктуры</a>
+              <a class="footer-link" href="#">Аудит ИТ-инфраструктуры</a>
+              <a class="footer-link" href="#">Аудит ИТ-инфраструктуры</a>
+              <a class="footer-link" href="#">Аудит ИТ-инфраструктуры</a>
+            </div>
+          </div>
+          <div class="footer-col order-mob-3">
+            <div class="footer-link-title">Навигация</div>
+            <div class="footer-links">
+              <a class="footer-link" href="#">О компании</a>
+              <a class="footer-link" href="#">Карьера</a>
+              <a class="footer-link" href="#">Контакты</a>
+              <a class="footer-link" href="#">Кейсы</a>
+              <a class="footer-link" href="#">Каталог услуг</a>
+              <a class="footer-link" href="#">Медиа</a>
+            </div>
+          </div>
+          <div class="footer-col order-mob-1">
+            <div class="footer-link-title">Контакты</div>
+            <a class="footer-email" href="mailto:sales@lard.team">sales@lard.team</a>
+            <a class="footer-tel" href="tel:+78123435769">+7 (812) 343 57 69</a>
+            <div class="footer-location">
+              <span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99992 10.8327C11.3806 10.8327 12.4999 9.71339 12.4999 8.33268C12.4999 6.95197 11.3806 5.83268 9.99992 5.83268C8.61921 5.83268 7.49992 6.95197 7.49992 8.33268C7.49992 9.71339 8.61921 10.8327 9.99992 10.8327Z" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.99992 18.3327C13.3333 14.9993 16.6666 12.0146 16.6666 8.33268C16.6666 4.65078 13.6818 1.66602 9.99992 1.66602C6.31802 1.66602 3.33325 4.65078 3.33325 8.33268C3.33325 12.0146 6.66659 14.9993 9.99992 18.3327Z" stroke="#79C9E0" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div class="footer-location-text">192007 Санкт-Петербург <br> Воронежская улица, 33</div>
+            </div>
+            <div class="footer-social">
+              <a href="#">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="38" height="38" rx="19" fill="#79C9E0" />
+                  <path d="M24.7249 16.4063C24.8087 16.1719 24.7249 16 24.3284 16H23.0151C22.681 16 22.5283 16.1487 22.4444 16.312C22.4444 16.312 21.7767 17.6827 20.8305 18.5715C20.5251 18.8301 20.3856 18.9118 20.2191 18.9118C20.1359 18.9118 20.0149 18.8301 20.0149 18.5957V16.4063C20.0149 16.125 19.9185 16 19.64 16H17.5764C17.368 16 17.2422 16.1301 17.2422 16.2541C17.2422 16.5202 17.7153 16.5818 17.7638 17.3319V18.9592C17.7638 19.3156 17.6878 19.3806 17.5201 19.3806C17.0752 19.3806 15.9924 18.0049 15.3499 16.43C15.2247 16.124 15.0984 16.0005 14.763 16.0005H13.4503C13.0749 16.0005 13 16.1492 13 16.3126C13 16.6059 13.4449 18.0578 15.0726 19.978C16.1577 21.2892 17.6854 22 19.0771 22C19.9113 22 20.0143 21.8422 20.0143 21.57V20.5789C20.0143 20.2633 20.094 20.1998 20.3581 20.1998C20.5521 20.1998 20.8862 20.2825 21.6653 20.9141C22.5552 21.6632 22.7025 21.9995 23.2026 21.9995H24.5153C24.8901 21.9995 25.0776 21.8417 24.9698 21.5302C24.8518 21.2201 24.4266 20.7689 23.8625 20.2351C23.5559 19.9306 23.0978 19.6029 22.9583 19.4391C22.7636 19.2279 22.8199 19.1346 22.9583 18.9471C22.9589 18.9476 24.5584 17.0511 24.7249 16.4063Z" fill="#1A2035" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 19C0 8.50659 8.50659 0 19 0C29.4934 0 38 8.50659 38 19C38 29.4934 29.4934 38 19 38C8.50659 38 0 29.4934 0 19Z" fill="#79C9E0" />
+                  <path d="M23.1882 15.0909L14.3287 18.3549C13.9721 18.5069 13.8515 18.8113 14.2425 18.9765L16.5153 19.6665L22.0108 16.4218C22.3109 16.2181 22.618 16.2724 22.3537 16.4965L17.6339 20.5793L17.4856 22.3071C17.6229 22.5739 17.8744 22.5751 18.0347 22.4425L19.3406 21.2621L21.577 22.862C22.0964 23.1558 22.3791 22.9662 22.4908 22.4278L23.9577 15.7918C24.11 15.129 23.8503 14.837 23.1882 15.0909Z" fill="#1A2035" />
+                </svg>
+              </a>
+              <a href="#">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 19C0 8.50659 8.50659 0 19 0C29.4934 0 38 8.50659 38 19C38 29.4934 29.4934 38 19 38C8.50659 38 0 29.4934 0 19Z" fill="#79C9E0" />
+                  <path d="M19 14C21.7615 14 24 16.2385 24 19C24 21.7615 21.7615 24 19 24C18.1164 24.0015 17.2483 23.7677 16.485 23.3225L14.002 24L14.678 21.516C14.2325 20.7525 13.9985 19.884 14 19C14 16.2385 16.2385 14 19 14ZM17.296 16.65L17.196 16.654C17.1314 16.6585 17.0682 16.6754 17.01 16.704C16.9558 16.7348 16.9063 16.7731 16.863 16.818C16.803 16.8745 16.769 16.9235 16.7325 16.971C16.5476 17.2114 16.448 17.5067 16.4495 17.81C16.4505 18.055 16.5145 18.2935 16.6145 18.5165C16.819 18.9675 17.1555 19.445 17.5995 19.8875C17.7065 19.994 17.8115 20.101 17.9245 20.2005C18.4762 20.6862 19.1336 21.0365 19.8445 21.2235L20.1285 21.267C20.221 21.272 20.3135 21.265 20.4065 21.2605C20.5521 21.2528 20.6942 21.2134 20.823 21.145C20.8884 21.1112 20.9523 21.0745 21.0145 21.035C21.0145 21.035 21.0357 21.0207 21.077 20.99C21.1445 20.94 21.186 20.9045 21.242 20.846C21.284 20.8027 21.319 20.7523 21.347 20.695C21.386 20.6135 21.425 20.458 21.441 20.3285C21.453 20.2295 21.4495 20.1755 21.448 20.142C21.446 20.0885 21.4015 20.033 21.353 20.0095L21.062 19.879C21.062 19.879 20.627 19.6895 20.361 19.5685C20.3332 19.5564 20.3033 19.5494 20.273 19.548C20.2388 19.5444 20.2042 19.5482 20.1716 19.5592C20.139 19.5701 20.1091 19.588 20.084 19.6115C20.0815 19.6105 20.048 19.639 19.6865 20.077C19.6658 20.1049 19.6372 20.1259 19.6044 20.1375C19.5716 20.1491 19.5362 20.1507 19.5025 20.142C19.4699 20.1333 19.438 20.1223 19.407 20.109C19.345 20.083 19.3235 20.073 19.281 20.055C18.9939 19.9299 18.7282 19.7607 18.4935 19.5535C18.4305 19.4985 18.372 19.4385 18.312 19.3805C18.1153 19.1921 17.9439 18.979 17.802 18.7465L17.7725 18.699C17.7516 18.6669 17.7345 18.6325 17.7215 18.5965C17.7025 18.523 17.752 18.464 17.752 18.464C17.752 18.464 17.8735 18.331 17.93 18.259C17.985 18.189 18.0315 18.121 18.0615 18.0725C18.1205 17.9775 18.139 17.88 18.108 17.8045C17.968 17.4625 17.8233 17.1223 17.674 16.784C17.6445 16.717 17.557 16.669 17.4775 16.6595C17.4505 16.6562 17.4235 16.6535 17.3965 16.6515C17.3294 16.6476 17.2621 16.6483 17.195 16.6535L17.296 16.65Z" fill="#1A2035" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/app2.js"></script>
+
+<script>
+  function verticalTicker(selector, {
+    slidesPerView = 3,
+    space = 70,
+    speed = 9000,
+    reverse = false
+  } = {}) {
+    const el = document.querySelector(selector);
+    if (!el) return null;
+
+    const count = el.querySelectorAll('.swiper-slide').length || 1;
+
+    return new Swiper(selector, {
+      direction: 'vertical',
+      slidesPerView,
+      spaceBetween: space,
+      loop: true,
+      loopedSlides: count,
+      loopAdditionalSlides: Math.max(24, count * 3),
+      freeMode: { enabled: true, momentum: false },
+      speed,
+      autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+      allowTouchMove: false,
+      watchSlidesProgress: true,
+      observer: true,
+      observeParents: true,
+      breakpoints: {
+        0:   { spaceBetween: 16 },   
+        769: { spaceBetween: space }
+      },
+      on: {
+        init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+        resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
+      }
+    });
+  }
+
+  const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
+  const vpRight = verticalTicker('.vpartners--right', { slidesPerView: 4, space: 70, speed: 9000, reverse: true  });
+</script>
+
+
+
+
+
+<script>
+function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
+  const el = document.querySelector(selector);
+  if (!el) return null;
+
+  const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
+
+  return new Swiper(selector, {
+    slidesPerView: 'auto',
+    spaceBetween: space,
+    loop: true,
+    loopedSlides: slidesCount,
+    loopAdditionalSlides: Math.min(20, slidesCount * 2),
+    speed,
+    freeMode: { enabled: true, momentum: false },
+    watchSlidesProgress: true,
+    allowTouchMove: true,
+    autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+    breakpoints: {
+      0:   { spaceBetween: 14 },  // мобильный вид
+      768: { spaceBetween: space }
+    },
+    on: {
+      init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+      resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
+    }
+  });
+}
+
+const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
+const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
+
+</script>
+
+<script>
+  const expert_swiper = new Swiper('.expert-swiper', {
+    spaceBetween: 10,
+    slidesPerView: 1.2,     
+    breakpoints: {
+      576:  { slidesPerView: 1.6 },
+      768:  { slidesPerView: 1.6 },
+      1024: { slidesPerView: 4.6 },
+      1280: { slidesPerView: 4.6 },
+    },
+  });
+</script>
+
+<script>
+    const team_swiper = new Swiper('.team-swiper', {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    pagination: {
+      el: '.lard-swiper-progressbar',
+      type: 'progressbar',
+    },
+    breakpoints: {
+      768: { 
+        slidesPerView: 2,
+        pagination: false 
+      },
+      1024: { slidesPerView: 2.6 }
+    }
+  });
+</script>
+
+<script>
+  const nav = document.getElementById('aboutNav');
+const links = Array.from(nav.querySelectorAll('.about-nav-link'));
+
+let lastClicked = nav.querySelector('.about-nav-link.active') || links[0];
+if (!lastClicked.classList.contains('active')) lastClicked.classList.add('active');
+
+// Клик: делаем пункт постоянным active
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    lastClicked?.classList.remove('active');
+    link.classList.add('active');
+    lastClicked = link;
+  });
+
+  // Ховер: временно показываем active на наведенном пункте
+  link.addEventListener('mouseenter', () => {
+    lastClicked?.classList.remove('active');
+    link.classList.add('active');
+  });
+
+  // Уход курсора: возвращаем active на последний кликнутый
+  link.addEventListener('mouseleave', () => {
+    links.forEach(l => l.classList.remove('active'));
+    lastClicked?.classList.add('active');
+  });
+});
+
+</script>
+
+
+    
+
+</body>
+</html>

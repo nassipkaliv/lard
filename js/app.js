@@ -1,4 +1,13 @@
+  document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.header-logo');
+    if (!logo) return;
 
+    logo.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  });
+  
+  
   const newsSwiper = new Swiper('.news-swiper', {
     loop: false,
     speed: 500,
