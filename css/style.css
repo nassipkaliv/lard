@@ -86,6 +86,7 @@ button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  border: 0;
   border-radius: 8px;
   padding: 10px 37px;
   backdrop-filter: blur(14px);
@@ -98,6 +99,104 @@ button {
 .header-bar:hover {
   border: 1px solid #4b4d57; 
 }
+
+
+.header-bar .icon-close { display: none; }
+.header-bar[aria-expanded="true"] .icon-burger { display: none; }
+.header-bar[aria-expanded="true"] .icon-close { display: inline-block; }
+
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 50;
+}
+
+.menu-dropdown {
+  position: absolute;
+  z-index: -1;
+  top: 0%; 
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.menu-dropdown.is-open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-dropdown__inner {
+  backdrop-filter: blur(8px);
+  background: rgba(37, 44, 71, 0.8);
+  padding: 24px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 12px;
+}
+
+.header-bar[aria-expanded="true"] {
+  border: 1px solid #818288;
+}
+
+#menuToggle[aria-expanded="true"] ~ .header-right .header-btn {
+  border: 1px solid #818288;
+}
+
+.mega-menu-container {
+  display: flex;
+  margin-top: 92px;
+  justify-content: space-between;
+}
+
+.mega-menu-left {
+  display: flex;
+  gap: 120px;
+}
+
+.mega-menu-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.mega-menu-block {
+  border-radius: 12px;
+  background: var(--primary-black);
+  min-height: 140px;
+  min-width: 335px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.blue-block {
+  background: var(--blue);
+}
+
+.mega-menu-title {
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--secondary-white);
+  max-width: 205px;
+}
+
+.blue-block .mega-menu-title {
+  color: var(--primary-black);
+}
+
+.mega-menu-img {
+  top: 12px;
+  right: 12px;
+  position: absolute;
+}
+
 
 .header-logo {
   flex: 0 0 auto;
@@ -161,14 +260,21 @@ button {
   margin-top: 400px;
 }
 
-.intro-title {
+.intro-title{
   font-family: var(--second-family);
   font-weight: 700;
-  font-size: 95px;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: var(--secondary-white);
+
+  /* важно для «в одну строку» */
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  /* Fallback: пока скрипт не посчитал — пусть будет адаптивно от экрана */
+  font-size: clamp(28px, 9vw, 120px);
 }
+
 
 section {
   width: 100%;
@@ -440,7 +546,8 @@ section {
 .lard-swiper-card-bg {
   position: absolute;
   z-index: -1;
-  bottom: 0%;
+  bottom: -12%;
+  width: 100%;
 }
 
 .lard-swiper-card {
@@ -589,6 +696,10 @@ section {
   border-radius: 12px;
   padding: 24px 48px 24px 24px;
   min-width: 24.6%;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .case-subtitle {
@@ -689,7 +800,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 48px;
+  position: relative;
+  z-index: 99;
 }
 
 .case-right-block {
@@ -727,9 +839,9 @@ section {
 
 .clients-bg {
   position: absolute;
-  top: -40%;
+  top: -35%;
   left: 0;
-  opacity: 0.35;
+  opacity: 0.25;
   z-index: 0;
 }
 
@@ -742,7 +854,7 @@ section {
   position: absolute;   
   left: 0; right: 0;    
   top: 0px;           
-  z-index: 5;          
+  z-index: 1;          
   display:flex; align-items:center; gap:16px;
   pointer-events: auto; 
   max-width: 55%;
@@ -839,6 +951,8 @@ section {
 .case-media img {
   border-radius: 12px;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .news {
@@ -1175,6 +1289,11 @@ section {
   letter-spacing: 0.01em;
   color: var(--primary-white);
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--blue);
 }
 
 .footer-email {
@@ -1559,9 +1678,10 @@ section {
 .vpartners-panel{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;                 /* как просили */
-  overflow: hidden;          /* чтобы работала маска/скругление */
-  border-radius: 0 0 22px 22px;          /* скруглённый низ */
+  gap: 70px;                 
+  overflow: hidden;          
+  padding: 10px 0;
+  border-radius: 0 0 22px 22px;         
   -webkit-mask-image: linear-gradient(to bottom,
       rgba(0,0,0,0) 0%,
       rgba(0,0,0,1) 12%,
@@ -1804,6 +1924,38 @@ section {
   gap: 8px;
 }
 
+.to-top{
+  position: fixed;
+  bottom: 24px;
+  right: 40px;
+  border: 1px solid #4b4d57;
+  border-radius: 8px;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  z-index: 99;
+  backdrop-filter: blur(14px);
+  background: rgba(37, 44, 71, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .2s ease, transform .2s ease, visibility 0s .2s;
+}
+.to-top:hover { filter: brightness(1.1); }
+.to-top:focus-visible { outline: 2px solid #77D1E7; outline-offset: 2px; }
+
+.to-top.is-visible{
+  opacity: 1; visibility: visible; transform: translateY(0);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+/* чтобы на очень маленьких экранах не мешала */
+@media (max-width: 420px){
+  .to-top{ right: 12px; bottom: 12px; }
+}
+
 .only-mob {
   display: none;
 } 
@@ -1864,6 +2016,7 @@ section {
 
   .intro-title {
     font-size: 36px;
+    white-space: wrap;
   }
 
   .intro-content-info {
