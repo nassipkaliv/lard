@@ -43,14 +43,61 @@
   </header>
 
   <section class="intro">
-    <img src="assets/img/about-intro-bg.png" alt="Vector" class="vector-back only-pc">
-    <img src="assets/img/vector-about.png" alt="vector" class="vector-about-intro-bg only-mob">
-    <img src="assets/img/about-intro-bg2.png" alt="Illustration" class="illustration-back">
     <div class="container">
       <div class="intro-pagination">
         <a href="index.html" class="active">Главная</a>
         <span>/</span>
         <a href="about.html">Контакты</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts">
+    <div class="container">
+      <div class="contacts-container">
+        <h1 class="contacts-title">Контакты</h1>
+        <div class="contacts-blocks-container">
+          <div class="contacts-left">
+            <div class="contacts-block">
+              <h2 class="contacts-block-title">Адрес</h2>
+              <p class="contacts-block-text">192007 Санкт-Петербург Воронежская улица, 33</p>
+            </div>
+            <div class="contacts-block">
+              <h2 class="contacts-block-title">График работы</h2>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Понедельник</p>
+                <p class="contacts-block-text">09:00 - 19:00</p>
+              </div>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Вторник</p>
+                <p class="contacts-block-text">09:00 - 19:00</p>
+              </div>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Среда</p>
+                <p class="contacts-block-text">09:00 - 19:00</p>
+              </div>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Четверг</p>
+                <p class="contacts-block-text">09:00 - 19:00</p>
+              </div>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Пятница</p>
+                <p class="contacts-block-text">09:00 - 19:00</p>
+              </div>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Суббота</p>
+                <p class="contacts-block-text vihodnoy">Выходной</p>
+              </div>
+              <div class="contacts-block-text-row">
+                <p class="contacts-block-text">Воскресенье</p>
+                <p class="contacts-block-text vihodnoy">Выходной</p>
+              </div>
+            </div>
+          </div>
+          <div class="contacts-right">
+            <img src="assets/img/map.png" alt="map" class="map">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -140,149 +187,6 @@
   <script src="js/app.js"></script>
   <script src="js/app2.js"></script>
 
-<script>
-  function verticalTicker(selector, {
-    slidesPerView = 3,
-    space = 70,
-    speed = 9000,
-    reverse = false
-  } = {}) {
-    const el = document.querySelector(selector);
-    if (!el) return null;
-
-    const count = el.querySelectorAll('.swiper-slide').length || 1;
-
-    return new Swiper(selector, {
-      direction: 'vertical',
-      slidesPerView,
-      spaceBetween: space,
-      loop: true,
-      loopedSlides: count,
-      loopAdditionalSlides: Math.max(24, count * 3),
-      freeMode: { enabled: true, momentum: false },
-      speed,
-      autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
-      allowTouchMove: false,
-      watchSlidesProgress: true,
-      observer: true,
-      observeParents: true,
-      breakpoints: {
-        0:   { spaceBetween: 16 },   
-        769: { spaceBetween: space }
-      },
-      on: {
-        init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
-        resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
-      }
-    });
-  }
-
-  const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
-  const vpRight = verticalTicker('.vpartners--right', { slidesPerView: 4, space: 70, speed: 9000, reverse: true  });
-</script>
-
-
-
-
-
-<script>
-function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
-  const el = document.querySelector(selector);
-  if (!el) return null;
-
-  const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
-
-  return new Swiper(selector, {
-    slidesPerView: 'auto',
-    spaceBetween: space,
-    loop: true,
-    loopedSlides: slidesCount,
-    loopAdditionalSlides: Math.min(20, slidesCount * 2),
-    speed,
-    freeMode: { enabled: true, momentum: false },
-    watchSlidesProgress: true,
-    allowTouchMove: true,
-    autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
-    breakpoints: {
-      0:   { spaceBetween: 14 },  // мобильный вид
-      768: { spaceBetween: space }
-    },
-    on: {
-      init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
-      resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
-    }
-  });
-}
-
-const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
-const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
-
-</script>
-
-<script>
-  const expert_swiper = new Swiper('.expert-swiper', {
-    spaceBetween: 10,
-    slidesPerView: 1.2,     
-    breakpoints: {
-      576:  { slidesPerView: 1.6 },
-      768:  { slidesPerView: 1.6 },
-      1024: { slidesPerView: 4.6 },
-      1280: { slidesPerView: 4.6 },
-    },
-  });
-</script>
-
-<script>
-    const team_swiper = new Swiper('.team-swiper', {
-    loop: true,
-    spaceBetween: 10,
-    slidesPerView: 1,
-    pagination: {
-      el: '.lard-swiper-progressbar',
-      type: 'progressbar',
-    },
-    breakpoints: {
-      768: { 
-        slidesPerView: 2,
-        pagination: false 
-      },
-      1024: { slidesPerView: 2.6 }
-    }
-  });
-</script>
-
-<script>
-  const nav = document.getElementById('aboutNav');
-const links = Array.from(nav.querySelectorAll('.about-nav-link'));
-
-let lastClicked = nav.querySelector('.about-nav-link.active') || links[0];
-if (!lastClicked.classList.contains('active')) lastClicked.classList.add('active');
-
-// Клик: делаем пункт постоянным active
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    lastClicked?.classList.remove('active');
-    link.classList.add('active');
-    lastClicked = link;
-  });
-
-  // Ховер: временно показываем active на наведенном пункте
-  link.addEventListener('mouseenter', () => {
-    lastClicked?.classList.remove('active');
-    link.classList.add('active');
-  });
-
-  // Уход курсора: возвращаем active на последний кликнутый
-  link.addEventListener('mouseleave', () => {
-    links.forEach(l => l.classList.remove('active'));
-    lastClicked?.classList.add('active');
-  });
-});
-
-</script>
-
-
-    
 
 </body>
 </html>
