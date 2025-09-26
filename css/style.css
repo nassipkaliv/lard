@@ -1488,6 +1488,7 @@ section {
   position: absolute;
   z-index: -1;
   bottom: -15%;
+  width: 100%;
 }
 
 .partners-swiper {
