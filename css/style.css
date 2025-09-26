@@ -2609,6 +2609,24 @@ section {
     gap: 12px;
   }
 
+  .mega-menu-container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .mega-menu-right {
+    display: none;
+  }
+
+  .menu-dropdown__inner {
+    padding: 24px;
+  }
+
+  .mega-menu-left {
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .only-pc {
     display: none;
   }
