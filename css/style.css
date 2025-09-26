@@ -1362,6 +1362,7 @@ section {
   color: var(--secondary-white);
   margin-top: 120px;
   text-wrap: balance;
+  max-width: 750px;
 }
 
 .our-clients {
