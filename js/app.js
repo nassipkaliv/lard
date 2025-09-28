@@ -1,53 +1,49 @@
-  document.addEventListener('DOMContentLoaded', () => {
-    const logo = document.querySelector('.header-logo');
-    if (!logo) return;
-
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Клик по логотипу -> домой ---
+  const logo = document.querySelector('.header-logo');
+  if (logo) {
     logo.addEventListener('click', () => {
       window.location.href = 'index.html';
     });
-  });
+  }
 
+  // --- Кнопка "Back to top" ---
   (function () {
-  const btn = document.getElementById('backToTop');
-  const SHOW_AFTER = 750;
-  const prefersNoMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
 
+    const SHOW_AFTER = 750;
+    const prefersNoMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const onScroll = () => {
-    if (window.scrollY > SHOW_AFTER) {
-      btn.classList.add('is-visible');
-    } else {
-      btn.classList.remove('is-visible');
-    }
-  };
+    const onScroll = () => {
+      btn.classList.toggle('is-visible', window.scrollY > SHOW_AFTER);
+    };
 
- 
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => { onScroll(); ticking = false; });
-      ticking = true;
-    }
-  }, { passive: true });
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => { onScroll(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
 
- 
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: prefersNoMotion ? 'auto' : 'smooth' });
-  });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: prefersNoMotion ? 'auto' : 'smooth' });
+    });
 
+    onScroll();
+  })();
 
-  onScroll();
-})();
-
-    (function () {
+  // --- MegaMenu toggle ---
+  (function () {
     const toggleBtn = document.getElementById('menuToggle');
     const dropdown  = document.getElementById('megaMenu');
+    if (!toggleBtn || !dropdown) return;
 
     const open = () => {
       dropdown.classList.add('is-open');
       dropdown.setAttribute('aria-hidden', 'false');
       toggleBtn.setAttribute('aria-expanded', 'true');
-      // ловим клик вне
       setTimeout(() => document.addEventListener('click', onDocClick), 0);
       document.addEventListener('keydown', onKey);
     };
@@ -73,45 +69,45 @@
       toggle();
     });
   })();
-  
 
+  // --- Автоматическая подгонка introTitle ---
   (function fitIntroTitle(){
-  const el = document.getElementById('introTitle');
-  if (!el) return;
+    const el = document.getElementById('introTitle');
+    if (!el) return;
 
-  const MIN_FS = 24;  
-  const MAX_FS = 160; 
+    const MIN_FS = 24;
+    const MAX_FS = 160;
 
-  const measure = () => {
-    el.style.fontSize = MAX_FS + 'px';
+    const measure = () => {
+      el.style.fontSize = MAX_FS + 'px';
 
-    const clone = el.cloneNode(true);
-    clone.style.visibility = 'hidden';
-    clone.style.position = 'absolute';
-    clone.style.whiteSpace = 'nowrap';
-    clone.style.width = 'auto';
-    clone.style.fontSize = MAX_FS + 'px';
-    document.body.appendChild(clone);
+      const clone = el.cloneNode(true);
+      Object.assign(clone.style, {
+        visibility: 'hidden',
+        position: 'absolute',
+        whiteSpace: 'nowrap',
+        width: 'auto',
+        fontSize: MAX_FS + 'px'
+      });
+      document.body.appendChild(clone);
 
-    const container = el.parentElement; 
-    const containerWidth = container.clientWidth || window.innerWidth;
-    const textWidth      = clone.scrollWidth;
+      const container = el.parentElement;
+      const containerWidth = container.clientWidth || window.innerWidth;
+      const textWidth = clone.scrollWidth;
 
-    document.body.removeChild(clone);
+      document.body.removeChild(clone);
 
-    const ratio = containerWidth / textWidth;
-    const newFs = Math.max(MIN_FS, Math.min(MAX_FS, MAX_FS * ratio));
+      const ratio = containerWidth / textWidth;
+      const newFs = Math.max(MIN_FS, Math.min(MAX_FS, MAX_FS * ratio));
+      el.style.fontSize = newFs + 'px';
+    };
 
-    el.style.fontSize = newFs + 'px';
-  };
+    measure();
+    window.addEventListener('resize', measure, { passive: true });
+    window.addEventListener('load', measure);
+  })();
 
-  measure();
-  window.addEventListener('resize', measure, { passive: true });
-  window.addEventListener('load', measure);
-})();
-
-  
-  
+  // --- Swiper: Новости ---
   const newsSwiper = new Swiper('.news-swiper', {
     loop: false,
     speed: 500,
@@ -129,6 +125,7 @@
     },
   });
 
+  // --- Swiper: Lard ---
   const lard_swiper = new Swiper('.lard-swiper', {
     loop: true,
     spaceBetween: 10,
@@ -138,76 +135,69 @@
       type: 'progressbar',
     },
     breakpoints: {
-      768: { 
-        slidesPerView: 2,
-        pagination: false 
-      },
+      768: { slidesPerView: 2, pagination: false },
       1024: { slidesPerView: 2.6 }
     }
   });
 
+  // --- Swiper: Case + Cases mobile ---
   const case_swiper = new Swiper('.case-swiper', {
     spaceBetween: 10,
     slidesPerView: 1.2
   });
-
   const cases_swiper_mob = new Swiper('.cases-swiper-mob', {
     spaceBetween: 12,
     slidesPerView: 1.2
   });
 
-const CASE_DELAY = 8000;
+  // --- Cases с автоплеем и индикаторами ---
+  const CASE_DELAY = 8000;
+  document.querySelectorAll('.cases').forEach(section => {
+    const swiperEl   = section.querySelector('.cases-swiper');
+    const prevBtn    = section.querySelector('.cases-arrow.prev');
+    const nextBtn    = section.querySelector('.cases-arrow.next');
+    const indicators = Array.from(section.querySelectorAll('.cases-track .indicator'));
 
-document.querySelectorAll('.cases').forEach(section => {
-  const swiperEl   = section.querySelector('.cases-swiper');
-  const prevBtn    = section.querySelector('.cases-arrow.prev');
-  const nextBtn    = section.querySelector('.cases-arrow.next');
-  const indicators = Array.from(section.querySelectorAll('.cases-track .indicator'));
+    if (!swiperEl) return;
 
-  if (!swiperEl) return;
-
-  const swiper = new Swiper(swiperEl, {
-    loop: true,
-    autoplay: { delay: CASE_DELAY, disableOnInteraction: false },
-    speed: 500,
-    allowTouchMove: true,
-    spaceBetween: 20,
-  });
-
-
-
-  const setActive = (i) => {
-    indicators.forEach((el, idx) => {
-      if (idx === i) {
-        el.classList.remove('is-active');
-        void el.offsetWidth; // перезапуск анимации
-        el.classList.add('is-active');
-      } else {
-        el.classList.remove('is-active');
-      }
+    const swiper = new Swiper(swiperEl, {
+      loop: true,
+      autoplay: { delay: CASE_DELAY, disableOnInteraction: false },
+      speed: 500,
+      allowTouchMove: true,
+      spaceBetween: 20,
     });
-  };
 
-  setActive(swiper.realIndex % indicators.length);
+    const setActive = (i) => {
+      indicators.forEach((el, idx) => {
+        if (idx === i) {
+          el.classList.remove('is-active');
+          void el.offsetWidth; // перезапуск анимации
+          el.classList.add('is-active');
+        } else {
+          el.classList.remove('is-active');
+        }
+      });
+    };
 
-  swiper.on('slideChange', () => {
     setActive(swiper.realIndex % indicators.length);
-  });
 
-  prevBtn?.addEventListener('click', () => {
-    swiper.slidePrev();
-    swiper.autoplay.start();
-  });
+    swiper.on('slideChange', () => {
+      setActive(swiper.realIndex % indicators.length);
+    });
 
-  nextBtn?.addEventListener('click', () => {
-    swiper.slideNext();
-    swiper.autoplay.start();
-  });
+    prevBtn?.addEventListener('click', () => {
+      swiper.slidePrev();
+      swiper.autoplay.start();
+    });
+    nextBtn?.addEventListener('click', () => {
+      swiper.slideNext();
+      swiper.autoplay.start();
+    });
 
-  swiper.on('touchEnd', () => {
-    swiper.autoplay.start();
-    setActive(swiper.realIndex % indicators.length);
+    swiper.on('touchEnd', () => {
+      swiper.autoplay.start();
+      setActive(swiper.realIndex % indicators.length);
+    });
   });
 });
-
-
