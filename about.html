@@ -1109,6 +1109,17 @@
   <script src="js/app2.js"></script>
 
 <script>
+  // --- Фиксация aboutNav после 750px ---
+  document.addEventListener("scroll", function () {
+    const nav = document.getElementById("aboutNav");
+    if (window.scrollY >= 750) {
+      nav.classList.add("visible");
+    } else {
+      nav.classList.remove("visible");
+    }
+  });
+
+  // --- Вертикальный тикер ---
   function verticalTicker(selector, {
     slidesPerView = 3,
     space = 70,
@@ -1147,47 +1158,40 @@
 
   const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
   const vpRight = verticalTicker('.vpartners--right', { slidesPerView: 4, space: 70, speed: 9000, reverse: true  });
-</script>
 
+  // --- Горизонтальный тикер (partners) ---
+  function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
+    const el = document.querySelector(selector);
+    if (!el) return null;
 
+    const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
 
+    return new Swiper(selector, {
+      slidesPerView: 'auto',
+      spaceBetween: space,
+      loop: true,
+      loopedSlides: slidesCount,
+      loopAdditionalSlides: Math.min(20, slidesCount * 2),
+      speed,
+      freeMode: { enabled: true, momentum: false },
+      watchSlidesProgress: true,
+      allowTouchMove: true,
+      autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+      breakpoints: {
+        0:   { spaceBetween: 14 },  
+        768: { spaceBetween: space }
+      },
+      on: {
+        init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+        resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
+      }
+    });
+  }
 
+  const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
+  const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
 
-<script>
-function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
-  const el = document.querySelector(selector);
-  if (!el) return null;
-
-  const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
-
-  return new Swiper(selector, {
-    slidesPerView: 'auto',
-    spaceBetween: space,
-    loop: true,
-    loopedSlides: slidesCount,
-    loopAdditionalSlides: Math.min(20, slidesCount * 2),
-    speed,
-    freeMode: { enabled: true, momentum: false },
-    watchSlidesProgress: true,
-    allowTouchMove: true,
-    autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
-    breakpoints: {
-      0:   { spaceBetween: 14 },  // мобильный вид
-      768: { spaceBetween: space }
-    },
-    on: {
-      init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
-      resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
-    }
-  });
-}
-
-const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
-const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
-
-</script>
-
-<script>
+  // --- Слайдер экспертов ---
   const expert_swiper = new Swiper('.expert-swiper', {
     spaceBetween: 10,
     slidesPerView: 1.2,     
@@ -1198,10 +1202,9 @@ const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, spa
       1280: { slidesPerView: 4.6 },
     },
   });
-</script>
 
-<script>
-    const team_swiper = new Swiper('.team-swiper', {
+  // --- Слайдер команды ---
+  const team_swiper = new Swiper('.team-swiper', {
     loop: true,
     spaceBetween: 10,
     slidesPerView: 1,
@@ -1217,37 +1220,33 @@ const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, spa
       1024: { slidesPerView: 2.6 }
     }
   });
-</script>
 
-<script>
+  // --- Логика active для aboutNav ---
   const nav = document.getElementById('aboutNav');
-const links = Array.from(nav.querySelectorAll('.about-nav-link'));
+  const links = Array.from(nav.querySelectorAll('.about-nav-link'));
 
-let lastClicked = nav.querySelector('.about-nav-link.active') || links[0];
-if (!lastClicked.classList.contains('active')) lastClicked.classList.add('active');
+  let lastClicked = nav.querySelector('.about-nav-link.active') || links[0];
+  if (!lastClicked.classList.contains('active')) lastClicked.classList.add('active');
 
-// Клик: делаем пункт постоянным active
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    lastClicked?.classList.remove('active');
-    link.classList.add('active');
-    lastClicked = link;
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      lastClicked?.classList.remove('active');
+      link.classList.add('active');
+      lastClicked = link;
+    });
+
+    link.addEventListener('mouseenter', () => {
+      lastClicked?.classList.remove('active');
+      link.classList.add('active');
+    });
+
+    link.addEventListener('mouseleave', () => {
+      links.forEach(l => l.classList.remove('active'));
+      lastClicked?.classList.add('active');
+    });
   });
-
-  // Ховер: временно показываем active на наведенном пункте
-  link.addEventListener('mouseenter', () => {
-    lastClicked?.classList.remove('active');
-    link.classList.add('active');
-  });
-
-  // Уход курсора: возвращаем active на последний кликнутый
-  link.addEventListener('mouseleave', () => {
-    links.forEach(l => l.classList.remove('active'));
-    lastClicked?.classList.add('active');
-  });
-});
-
 </script>
+
 
 
     
