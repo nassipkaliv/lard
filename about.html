@@ -165,7 +165,7 @@
         <h1 class="about-intro-title">
           Делаем передовые ИТ доступными для малого и среднего бизнеса в РФ
         </h1>
-        <div class="about-intro-nav" id="aboutNav">
+        <div class="about-intro-nav about-intro-nav-static" id="aboutNavStatic">
           <a href="#mission" class="about-nav-link active">Миссия</a>
           <a href="#reviews" class="about-nav-link">Отзывы</a>
           <a href="#clients" class="about-nav-link">Клиенты</a>
@@ -173,6 +173,16 @@
           <a href="#team" class="about-nav-link">Команда</a>
           <a href="#partners" class="about-nav-link">Партнеры</a>
         </div>
+
+        <div class="about-intro-nav about-intro-nav-fixed" id="aboutNavFixed">
+          <a href="#mission" class="about-nav-link active">Миссия</a>
+          <a href="#reviews" class="about-nav-link">Отзывы</a>
+          <a href="#clients" class="about-nav-link">Клиенты</a>
+          <a href="#expertise" class="about-nav-link">Экспертиза</a>
+          <a href="#team" class="about-nav-link">Команда</a>
+          <a href="#partners" class="about-nav-link">Партнеры</a>
+        </div>
+
 
       </div>
     </div>
@@ -1109,142 +1119,162 @@
   <script src="js/app2.js"></script>
 
 <script>
-  // --- Фиксация aboutNav после 750px ---
-  document.addEventListener("scroll", function () {
-    const nav = document.getElementById("aboutNav");
-    if (window.scrollY >= 750) {
-      nav.classList.add("visible");
-    } else {
-      nav.classList.remove("visible");
-    }
-  });
+document.addEventListener("scroll", function () {
+  const navFixed = document.getElementById("aboutNavFixed");
+  const navStatic = document.getElementById("aboutNavStatic");
 
-  // --- Вертикальный тикер ---
-  function verticalTicker(selector, {
-    slidesPerView = 3,
-    space = 70,
-    speed = 9000,
-    reverse = false
-  } = {}) {
-    const el = document.querySelector(selector);
-    if (!el) return null;
-
-    const count = el.querySelectorAll('.swiper-slide').length || 1;
-
-    return new Swiper(selector, {
-      direction: 'vertical',
-      slidesPerView,
-      spaceBetween: space,
-      loop: true,
-      loopedSlides: count,
-      loopAdditionalSlides: Math.max(24, count * 3),
-      freeMode: { enabled: true, momentum: false },
-      speed,
-      autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
-      allowTouchMove: false,
-      watchSlidesProgress: true,
-      observer: true,
-      observeParents: true,
-      breakpoints: {
-        0:   { spaceBetween: 16 },   
-        769: { spaceBetween: space }
-      },
-      on: {
-        init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
-        resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
-      }
-    });
+  if (window.scrollY >= 750) {
+    navFixed.classList.add("visible");
+    navStatic.style.visibility = "hidden";
+  } else {
+    navFixed.classList.remove("visible");
+    navStatic.style.visibility = "visible";
   }
+});
 
-  const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
-  const vpRight = verticalTicker('.vpartners--right', { slidesPerView: 4, space: 70, speed: 9000, reverse: true  });
+function verticalTicker(selector, {
+  slidesPerView = 3,
+  space = 70,
+  speed = 9000,
+  reverse = false
+} = {}) {
+  const el = document.querySelector(selector);
+  if (!el) return null;
 
-  // --- Горизонтальный тикер (partners) ---
-  function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
-    const el = document.querySelector(selector);
-    if (!el) return null;
+  const count = el.querySelectorAll('.swiper-slide').length || 1;
 
-    const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
-
-    return new Swiper(selector, {
-      slidesPerView: 'auto',
-      spaceBetween: space,
-      loop: true,
-      loopedSlides: slidesCount,
-      loopAdditionalSlides: Math.min(20, slidesCount * 2),
-      speed,
-      freeMode: { enabled: true, momentum: false },
-      watchSlidesProgress: true,
-      allowTouchMove: true,
-      autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
-      breakpoints: {
-        0:   { spaceBetween: 14 },  
-        768: { spaceBetween: space }
-      },
-      on: {
-        init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
-        resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
-      }
-    });
-  }
-
-  const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
-  const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
-
-  // --- Слайдер экспертов ---
-  const expert_swiper = new Swiper('.expert-swiper', {
-    spaceBetween: 10,
-    slidesPerView: 1.2,     
-    breakpoints: {
-      576:  { slidesPerView: 1.6 },
-      768:  { slidesPerView: 1.6 },
-      1024: { slidesPerView: 4.6 },
-      1280: { slidesPerView: 4.6 },
-    },
-  });
-
-  // --- Слайдер команды ---
-  const team_swiper = new Swiper('.team-swiper', {
+  return new Swiper(selector, {
+    direction: 'vertical',
+    slidesPerView,
+    spaceBetween: space,
     loop: true,
-    spaceBetween: 10,
-    slidesPerView: 1,
-    pagination: {
-      el: '.lard-swiper-progressbar',
-      type: 'progressbar',
-    },
+    loopedSlides: count,
+    loopAdditionalSlides: Math.max(24, count * 3),
+    freeMode: { enabled: true, momentum: false },
+    speed,
+    autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+    allowTouchMove: false,
+    watchSlidesProgress: true,
+    observer: true,
+    observeParents: true,
     breakpoints: {
-      768: { 
-        slidesPerView: 2,
-        pagination: false 
-      },
-      1024: { slidesPerView: 2.6 }
+      0:   { spaceBetween: 16 },   
+      769: { spaceBetween: space }
+    },
+    on: {
+      init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+      resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
     }
   });
+}
 
-  // --- Логика active для aboutNav ---
-  const nav = document.getElementById('aboutNav');
-  const links = Array.from(nav.querySelectorAll('.about-nav-link'));
+const vpLeft  = verticalTicker('.vpartners--left',  { slidesPerView: 3, space: 70, speed: 9000, reverse: false });
+const vpRight = verticalTicker('.vpartners--right', { slidesPerView: 4, space: 70, speed: 9000, reverse: true  });
 
-  let lastClicked = nav.querySelector('.about-nav-link.active') || links[0];
-  if (!lastClicked.classList.contains('active')) lastClicked.classList.add('active');
+function makeTicker(selector, { speed = 6000, space = 20, reverse = false } = {}) {
+  const el = document.querySelector(selector);
+  if (!el) return null;
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      lastClicked?.classList.remove('active');
-      link.classList.add('active');
-      lastClicked = link;
-    });
+  const slidesCount = el.querySelectorAll('.swiper-slide').length || 1;
 
-    link.addEventListener('mouseenter', () => {
-      lastClicked?.classList.remove('active');
-      link.classList.add('active');
-    });
-
-    link.addEventListener('mouseleave', () => {
-      links.forEach(l => l.classList.remove('active'));
-      lastClicked?.classList.add('active');
-    });
+  return new Swiper(selector, {
+    slidesPerView: 'auto',
+    spaceBetween: space,
+    loop: true,
+    loopedSlides: slidesCount,
+    loopAdditionalSlides: Math.min(20, slidesCount * 2),
+    speed,
+    freeMode: { enabled: true, momentum: false },
+    watchSlidesProgress: true,
+    allowTouchMove: true,
+    autoplay: { delay: 0, disableOnInteraction: false, reverseDirection: reverse },
+    breakpoints: {
+      0:   { spaceBetween: 14 },  
+      768: { spaceBetween: space }
+    },
+    on: {
+      init(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; },
+      resize(s){ s.wrapperEl.style.transitionTimingFunction = 'linear'; }
+    }
   });
+}
+
+const partnersTop    = makeTicker('.partners-swiper--top',    { speed: 7000, space: 20 });
+const partnersBottom = makeTicker('.partners-swiper--bottom', { speed: 7000, space: 20, reverse: true });
+
+const expert_swiper = new Swiper('.expert-swiper', {
+  spaceBetween: 10,
+  slidesPerView: 1.2,     
+  breakpoints: {
+    576:  { slidesPerView: 1.6 },
+    768:  { slidesPerView: 1.6 },
+    1024: { slidesPerView: 4.6 },
+    1280: { slidesPerView: 4.6 },
+  },
+});
+
+const team_swiper = new Swiper('.team-swiper', {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 1,
+  pagination: {
+    el: '.lard-swiper-progressbar',
+    type: 'progressbar',
+  },
+  breakpoints: {
+    768: { 
+      slidesPerView: 2,
+      pagination: false 
+    },
+    1024: { slidesPerView: 2.6 }
+  }
+});
+
+const navStatic = document.getElementById('aboutNavStatic');
+const navFixed  = document.getElementById('aboutNavFixed');
+
+const linksStatic = Array.from(navStatic.querySelectorAll('.about-nav-link'));
+const linksFixed  = Array.from(navFixed.querySelectorAll('.about-nav-link'));
+const allLinks = [...linksStatic, ...linksFixed];
+
+
+const sections = linksStatic.map(link => document.querySelector(link.getAttribute('href')));
+
+function setActiveById(id) {
+  allLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+  });
+}
+
+allLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActiveById(entry.target.id);
+      }
+    });
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-20% 0px -70% 0px"
+  }
+);
+
+sections.forEach(section => {
+  if (section) observer.observe(section);
+});
+
 </script>
 
 

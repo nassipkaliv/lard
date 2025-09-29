@@ -1383,20 +1383,30 @@ section {
   border-radius: 8px;
   padding: 4px;
   background: rgba(32, 40, 64, 0.6);
-  position: fixed; 
-  top: 20px;      
+}
+
+/* статичный блок всегда в потоке */
+.about-intro-nav-static {
+  position: relative;
+}
+
+.about-intro-nav-fixed {
+  position: fixed;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  opacity: 0;     
-  pointer-events: none; 
-  transition: opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
 }
 
-.about-intro-nav.visible {
+.about-intro-nav-fixed.visible {
   opacity: 1;
   pointer-events: auto;
 }
+
+
 
 
 .about-nav-link {
