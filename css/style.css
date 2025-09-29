@@ -89,6 +89,7 @@ button {
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 10px 37px;
+  height: 38px;
   backdrop-filter: blur(14px);
   background: rgba(37, 44, 71, 0.6);
   cursor: pointer;
@@ -97,7 +98,7 @@ button {
 }
 
 .header-bar:hover {
-  border: 1px solid #4b4d57; 
+  border: 1px solid #F9FAFB; 
 }
 
 
@@ -213,6 +214,7 @@ button {
   border: 1px solid #4b4d57;
   border-radius: 8px;
   padding: 10px 37px;
+  height: 38px;
   backdrop-filter: blur(14px);
   background: rgba(37, 44, 71, 0.6);
   display: flex;
@@ -2019,6 +2021,7 @@ section {
     backdrop-filter: none;
     background: transparent;
     cursor: pointer;
+    height: auto;
   }
 
   .vector-back {
